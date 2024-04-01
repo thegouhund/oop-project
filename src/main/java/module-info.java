@@ -9,6 +9,6 @@ module com.tubes {
     requires com.fasterxml.jackson.databind;
 
 
-    opens com.tubes to javafx.fxml;
-    exports com.tubes;
+    opens com.project to javafx.fxml;
+    exports com.project;
 }

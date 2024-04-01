@@ -1,9 +1,8 @@
-package com.tubes;
+package com.project;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -14,7 +13,7 @@ import org.controlsfx.control.SearchableComboBox;
 import java.io.File;
 import java.io.IOException;
 
-public class HelloController {
+public class MainController {
     @FXML
     private TextField fieldName;
     @FXML
@@ -43,7 +42,7 @@ public class HelloController {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode json = null;
         try {
-            json = objectMapper.readTree(new File("C:\\Users\\HP\\IdeaProjects\\tubes\\src\\main\\java\\com\\tubes\\airports.json"));
+            json = objectMapper.readTree(new File("src/main/resources/com/project/api/airports.json"));
             ObservableList<String> options = FXCollections.observableArrayList();
             for (int i = 0; i < json.size(); i++) {
                 String city = String.valueOf(json.get(i).get("city")).replace("\"", "");

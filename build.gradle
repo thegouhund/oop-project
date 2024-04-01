@@ -25,8 +25,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'com.tubes'
-  mainClass = 'com.tubes.HelloApplication'
+  mainModule = 'com.project'
+  mainClass = 'com.project.App'
 }
 
 javafx {
