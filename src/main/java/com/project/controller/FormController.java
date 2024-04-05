@@ -1,28 +1,27 @@
 package com.project.controller;
 
+import com.project.factory.AirlineFactory;
+import com.project.factory.ScheduleFactory;
+import com.project.model.Schedule;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import org.controlsfx.control.SearchableComboBox;
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import static javafx.collections.FXCollections.observableArrayList;
 
 public class FormController {
+    @FXML
+    private VBox vboxMain;
     @FXML
     private TextField fieldName;
     @FXML
@@ -30,7 +29,7 @@ public class FormController {
     @FXML
     private SearchableComboBox<String> cbDestination;
     @FXML
-    private VBox vboxMain;
+    private DatePicker datePickerDeparture;
     @FXML
     private ImageView iconFrom;
     @FXML
@@ -44,23 +43,9 @@ public class FormController {
     private void initialize() {
         cbFrom.setItems(getAirportsChoice());
         cbDestination.setItems(getAirportsChoice());
-        String[] seatsArray = {"Ekonomi", "Premium", "Bisnis", "First Class"};
+        String[] seatsArray = {"Economy", "Premium", "Business", "First Class"};
         ObservableList<String> seats = observableArrayList(seatsArray);
         choiceSeat.setItems(seats);
-
-        try {
-            iconFrom.setImage(new Image(new FileInputStream("src/main/resources/com/project/img/airplane-takeoff.png")));
-            iconDestination.setImage(new Image(new FileInputStream("src/main/resources/com/project/img/airplane-landing.png")));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    private void onSubmit() {
-        System.out.println("button");
-        System.out.println(fieldName.getText());
-        System.out.println(cbFrom.getValue());
     }
 
     private ObservableList<String> getAirportsChoice() {
@@ -121,5 +106,22 @@ public class FormController {
             }
         }
         return counter;
+    }
+
+    @FXML
+    private void onSubmit() {
+
+        System.out.println(AirlineFactory.generate().getPriceMultiplier());
+        createScheduleUI();
+    }
+
+    private HBox createScheduleUI() {
+//        Schedule schedule = new Schedule(AirlineFactory.generate(), strToLocalDateTime("04-04-2024 23:00:00"), strToLocalDateTime("05-04-2024 01:00:00"));
+        Schedule schedule = ScheduleFactory.generate(datePickerDeparture.getValue().toString());
+        System.out.println(schedule.toString());
+        HBox hBoxSchedule = new HBox();
+        ImageView imgViewAirline = new ImageView();
+
+        return hBoxSchedule;
     }
 }
