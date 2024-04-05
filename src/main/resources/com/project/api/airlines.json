@@ -1,0 +1,79 @@
+[
+  {
+    "logo": "",
+    "name": "Batik Air",
+    "iata": "ID",
+    "icao": "BTK",
+    "code": "BATIK"
+  },
+  {
+    "logo": "",
+    "name": "Citilink",
+    "iata": "QG",
+    "icao": "CTV",
+    "code": "SUPERGREEN"
+  },
+  {
+    "logo": "",
+    "name": "Garuda Indonesia",
+    "iata": "GA",
+    "icao": "GIA",
+    "code": "INDONESIA"
+  },
+  {
+    "logo": "",
+    "name": "Indonesia AirAsia",
+    "iata": "QZ",
+    "icao": "AWQ",
+    "code": "WAGON AIR"
+  },
+  {
+    "logo": "",
+    "name": "Lion Air",
+    "iata": "JT",
+    "icao": "LNI",
+    "code": "LION INTER"
+  },
+  {
+    "logo": "",
+    "name": "Nam Air",
+    "iata": "IN",
+    "icao": "LKN",
+    "code": "NAMAIR"
+  },
+  {
+    "logo": "",
+    "name": "Pelita Air",
+    "iata": "IP",
+    "icao": "PAS",
+    "code": "PELITA"
+  },
+  {
+    "logo": "",
+    "name": "Sriwijaya Air",
+    "iata": "SJ",
+    "icao": "SJY",
+    "code": "SRIWIJAYA"
+  },
+  {
+    "logo": "",
+    "name": "Super Air Jet",
+    "iata": "IU",
+    "icao": "SJV",
+    "code": "PROSPER"
+  },
+  {
+    "logo": "",
+    "name": "TransNusa",
+    "iata": "8B",
+    "icao": "TNU",
+    "code": "TRANSNUSA"
+  },
+  {
+    "logo": "",
+    "name": "Wings Air",
+    "iata": "IW",
+    "icao": "WON",
+    "code": "WINGS ABADI"
+  }
+]
