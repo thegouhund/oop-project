@@ -1,76 +1,76 @@
 [
   {
-    "logo": "",
+    "logo": "batikair.png",
     "name": "Batik Air",
     "iata": "ID",
     "icao": "BTK",
     "code": "BATIK"
   },
   {
-    "logo": "",
+    "logo": "citilink.png",
     "name": "Citilink",
     "iata": "QG",
     "icao": "CTV",
     "code": "SUPERGREEN"
   },
   {
-    "logo": "",
+    "logo": "garudaindonesia.png",
     "name": "Garuda Indonesia",
     "iata": "GA",
     "icao": "GIA",
     "code": "INDONESIA"
   },
   {
-    "logo": "",
-    "name": "Indonesia AirAsia",
+    "logo": "airasia.png",
+    "name": "AirAsia",
     "iata": "QZ",
     "icao": "AWQ",
     "code": "WAGON AIR"
   },
   {
-    "logo": "",
+    "logo": "lionair.png",
     "name": "Lion Air",
     "iata": "JT",
     "icao": "LNI",
     "code": "LION INTER"
   },
   {
-    "logo": "",
+    "logo": "namair.png",
     "name": "Nam Air",
     "iata": "IN",
     "icao": "LKN",
     "code": "NAMAIR"
   },
   {
-    "logo": "",
+    "logo": "pelitaair.png",
     "name": "Pelita Air",
     "iata": "IP",
     "icao": "PAS",
     "code": "PELITA"
   },
   {
-    "logo": "",
+    "logo": "sriwijayaair.png",
     "name": "Sriwijaya Air",
     "iata": "SJ",
     "icao": "SJY",
     "code": "SRIWIJAYA"
   },
   {
-    "logo": "",
+    "logo": "superairjet.png",
     "name": "Super Air Jet",
     "iata": "IU",
     "icao": "SJV",
     "code": "PROSPER"
   },
   {
-    "logo": "",
+    "logo": "transnusa.png",
     "name": "TransNusa",
     "iata": "8B",
     "icao": "TNU",
     "code": "TRANSNUSA"
   },
   {
-    "logo": "",
+    "logo": "wingsair.png",
     "name": "Wings Air",
     "iata": "IW",
     "icao": "WON",

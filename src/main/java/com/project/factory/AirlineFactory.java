@@ -23,7 +23,7 @@ public class AirlineFactory {
             throw new RuntimeException(e);
         }
 
-        return new Airline(String.valueOf(airlineData.get("name")), random.nextDouble(2));
+        return new Airline(String.valueOf(airlineData.get("name")), random.nextDouble(1, 2));
     }
 
 }

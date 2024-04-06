@@ -3,7 +3,6 @@ package com.project.model;
 import java.util.ArrayList;
 
 public class Airline {
-
     private String name;
     private double priceMultiplier = 1;
 

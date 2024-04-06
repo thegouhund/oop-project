@@ -2,9 +2,12 @@ package com.project.controller;
 
 import com.project.factory.AirlineFactory;
 import com.project.factory.ScheduleFactory;
+import com.project.model.Airport;
 import com.project.model.Schedule;
+import com.project.views.components.ScheduleUI;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -15,8 +18,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.controlsfx.control.SearchableComboBox;
+
 import java.io.File;
 import java.io.IOException;
+
 import static javafx.collections.FXCollections.observableArrayList;
 
 public class FormController {
@@ -25,9 +30,9 @@ public class FormController {
     @FXML
     private TextField fieldName;
     @FXML
-    private SearchableComboBox<String> cbFrom;
+    private SearchableComboBox<Airport> cbFrom;
     @FXML
-    private SearchableComboBox<String> cbDestination;
+    private SearchableComboBox<Airport> cbDestination;
     @FXML
     private DatePicker datePickerDeparture;
     @FXML
@@ -38,6 +43,8 @@ public class FormController {
     private VBox vboxPassengerField;
     @FXML
     private ChoiceBox<String> choiceSeat;
+    @FXML
+    private VBox vBoxSchedule;
 
     @FXML
     private void initialize() {
@@ -46,20 +53,24 @@ public class FormController {
         String[] seatsArray = {"Economy", "Premium", "Business", "First Class"};
         ObservableList<String> seats = observableArrayList(seatsArray);
         choiceSeat.setItems(seats);
+
     }
 
-    private ObservableList<String> getAirportsChoice() {
+    private ObservableList<Airport> getAirportsChoice() {
 
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode json = null;
         try {
             json = objectMapper.readTree(new File("src/main/resources/com/project/api/airports.json"));
-            ObservableList<String> options = observableArrayList();
+            ObservableList<Airport> options = observableArrayList();
             for (int i = 0; i < json.size(); i++) {
                 String city = String.valueOf(json.get(i).get("city")).replace("\"", "");
                 String iata = String.valueOf(json.get(i).get("iata")).replace("\"", "");
+                String airport_name = String.valueOf(json.get(i).get("airport_name")).replace("\"", "");
 
-                options.add(city + " (" + iata + ")");
+                Airport airport = new Airport(airport_name, iata, city);
+
+                options.add(airport);
             }
 
             return options;
@@ -110,18 +121,8 @@ public class FormController {
 
     @FXML
     private void onSubmit() {
-
-        System.out.println(AirlineFactory.generate().getPriceMultiplier());
-        createScheduleUI();
-    }
-
-    private HBox createScheduleUI() {
-//        Schedule schedule = new Schedule(AirlineFactory.generate(), strToLocalDateTime("04-04-2024 23:00:00"), strToLocalDateTime("05-04-2024 01:00:00"));
-        Schedule schedule = ScheduleFactory.generate(datePickerDeparture.getValue().toString());
-        System.out.println(schedule.toString());
-        HBox hBoxSchedule = new HBox();
-        ImageView imgViewAirline = new ImageView();
-
-        return hBoxSchedule;
+        Schedule schedule = ScheduleFactory.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
+        ScheduleUI scheduleUI = new ScheduleUI(schedule);
+        vBoxSchedule.getChildren().add(scheduleUI);
     }
 }
