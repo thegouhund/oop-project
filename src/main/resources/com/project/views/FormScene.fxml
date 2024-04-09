@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="655.0" prefWidth="1312.0"
+            xmlns="http://javafx.com/javafx/22" fx:controller="com.project.controller.FormController">
+    <children>
+        <MFXScrollPane hbarPolicy="NEVER">
+            <content>
+                <VBox fx:id="vboxMain" prefHeight="615.0" prefWidth="519.0" spacing="16.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="32.0" top="20.0"/>
+                    </padding>
+                    <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="902.0" spacing="32.0">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="29.0"
+                                  prefWidth="268.0" spacing="4.0">
+                                <children>
+                                    <ImageView fx:id="iconFrom" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                                               preserveRatio="true">
+                                        <image>
+                                            <Image url="@../img/airplane-takeoff.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="Kota Asal"/>
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
+                                  prefWidth="315.0" spacing="4.0">
+                                <children>
+                                    <ImageView fx:id="iconDestination" fitHeight="29.0" fitWidth="39.0"
+                                               pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../img/airplane-landing.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="Kota Asal"/>
+                                </children>
+                            </HBox>
+                        </children>
+                    </HBox>
+                    <HBox prefHeight="40.0" spacing="32.0">
+                        <children>
+                            <MFXFilterComboBox fx:id="cbFrom" floatingText="Pilih Kota Asal"
+                                               maxWidth="1.7976931348623157E308" prefHeight="42.0" HBox.hgrow="ALWAYS"/>
+                            <MFXFilterComboBox fx:id="cbDestination" floatingText="Pilih Kota Tujuan"
+                                               maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="178.0"
+                                               HBox.hgrow="ALWAYS"/>
+                        </children>
+                    </HBox>
+                    <Label graphicTextGap="8.0" text="Tanggal Keberangkatan">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/calendar.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Label>
+                    <MFXDatePicker fx:id="datePickerDeparture" prefHeight="38.0" prefWidth="468.0"/>
+                    <Label graphicTextGap="8.0" text="Kelas Kursi">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/seat.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Label>
+                    <MFXComboBox fx:id="choiceSeat" prefHeight="42.0" prefWidth="166.0" value="Any"/>
+                    <VBox fx:id="vboxPassengerField" prefWidth="379.0" spacing="16.0">
+                        <children>
+                            <HBox prefHeight="77.0" prefWidth="281.0" spacing="16.0">
+                                <children>
+                                    <VBox prefHeight="238.0" prefWidth="254.0" spacing="8.0">
+                                        <children>
+                                            <Label text="Nama Penumpang 1"/>
+                                            <MFXTextField alignment="TOP_LEFT" floatingText="Nama penumpang 1"
+                                                          maxHeight="1.7976931348623157E308"
+                                                          maxWidth="1.7976931348623157E308"/>
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="77.0" prefWidth="272.0" spacing="8.0">
+                                        <children>
+                                            <Label text="Usia Penumpang 1"/>
+                                            <MFXTextField floatingText="Usia penumpang"
+                                                          maxHeight="1.7976931348623157E308"
+                                                          maxWidth="1.7976931348623157E308" prefHeight="51.0"
+                                                          prefWidth="271.0"/>
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <MFXButton onAction="#onClickAddPassenger" prefHeight="38.0" prefWidth="174.0"
+                               style="-fx-background-color: #9e9e9e;" text="Tambah Penumpang"/>
+                    <MFXButton depthLevel="LEVEL5" onAction="#onSubmit" prefHeight="34.0" prefWidth="467.0"
+                               rippleColor="#5659ff" style="-fx-background-color: #178CF4; -fx-text-fill: white;"
+                               text="Cari Tiket" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="16.0"/>
+                        </font>
+                    </MFXButton>
+                </VBox>
+            </content>
+        </MFXScrollPane>
+        <MFXScrollPane layoutX="521.0" layoutY="4.0" prefHeight="617.0" prefWidth="771.0">
+            <content>
+                <VBox fx:id="vBoxSchedule" prefHeight="585.0" prefWidth="749.0" spacing="16.0">
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets right="8.0" top="16.0"/>
+                    </padding>
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="847.0" spacing="16.0"
+                              style="-fx-border-width: 1px; -fx-border-color: grey; -fx-border-radius: 6px;">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true"/>
+                                <VBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="149.0">
+                                    <children>
+                                        <Label text="00 Januari 0000">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label text="00.00 - 00.00">
+                                            <font>
+                                                <Font size="14.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label text="Travel Time:  0 hr 0 min"/>
+                                    </children>
+                                </VBox>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="147.0"
+                                       text="IATA - IATA">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <Label fx:id="price" alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="223.0"
+                                       text="IDR 0.000.000" textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <MFXButton maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="80.0"
+                                           rippleColor="#85e485" style="-fx-background-color: #5cdb5c;"/>
+                            </children>
+                            <padding>
+                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </content>
+        </MFXScrollPane>
+    </children>
+</AnchorPane>
