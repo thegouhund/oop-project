@@ -1,8 +1,9 @@
-package com.project.views.components;
+package com.project.components;
 
 import com.project.model.Airline;
 import com.project.model.Schedule;
 import com.project.utils.TimeUtils;
+import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
@@ -79,13 +81,19 @@ public class ScheduleUI extends HBox {
         String price = decimalFormat.format(schedule.getPrice());
         price = price.replace(",", ".");
         Label labelPrice = new Label("IDR " + price);
+
         labelPrice.setFont(new Font(18));
-        labelPrice.setAlignment(Pos.CENTER);
+        labelPrice.setPrefWidth(250);
+        labelPrice.setAlignment(Pos.CENTER_RIGHT);
         this.getChildren().add(labelPrice);
     }
 
     private void setupButton() {
-        Button button = new Button("Buy");
+        MFXButton button = new MFXButton("Buy");
+        button.setStyle("-fx-background-color: #5CDB5C;-fx-text-fill:white;");
+        button.setPrefWidth(80);
+        button.setPrefHeight(40);
+        button.setRippleColor(Paint.valueOf("#85e485"));
         this.getChildren().add(button);
     }
 }

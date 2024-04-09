@@ -1,13 +1,15 @@
 package com.project.controller;
 
-import com.project.factory.AirlineFactory;
 import com.project.factory.ScheduleFactory;
 import com.project.model.Airport;
 import com.project.model.Schedule;
-import com.project.views.components.ScheduleUI;
+import com.project.components.ScheduleUI;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
+import io.github.palexdev.materialfx.controls.MFXDatePicker;
+import io.github.palexdev.materialfx.controls.MFXFilterComboBox;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -30,11 +32,11 @@ public class FormController {
     @FXML
     private TextField fieldName;
     @FXML
-    private SearchableComboBox<Airport> cbFrom;
+    private MFXFilterComboBox<Airport> cbFrom;
     @FXML
-    private SearchableComboBox<Airport> cbDestination;
+    private MFXFilterComboBox<Airport> cbDestination;
     @FXML
-    private DatePicker datePickerDeparture;
+    private MFXDatePicker datePickerDeparture;
     @FXML
     private ImageView iconFrom;
     @FXML
@@ -42,7 +44,7 @@ public class FormController {
     @FXML
     private VBox vboxPassengerField;
     @FXML
-    private ChoiceBox<String> choiceSeat;
+    private MFXComboBox<String> choiceSeat;
     @FXML
     private VBox vBoxSchedule;
 
@@ -87,22 +89,23 @@ public class FormController {
         HBox hbox = new HBox();
         VBox vboxNameField = new VBox();
         Label labelNameField = new Label("Nama Penumpang " + passengerAmount);
-        TextField nameField = new TextField();
+        MFXTextField nameField = new MFXTextField();
         vboxNameField.getChildren().addAll(labelNameField, nameField);
-        vboxNameField.setMinWidth(185);
+        vboxNameField.setPrefWidth(254);
 
         VBox vboxAgeField = new VBox();
         Label labelAgeField = new Label("Usia Penumpang " + passengerAmount);
-        TextField ageField = new TextField();
+        MFXTextField ageField = new MFXTextField();
         vboxAgeField.getChildren().addAll(labelAgeField, ageField);
-        vboxAgeField.setMinWidth(185);
+        vboxAgeField.setPrefWidth(254);
 
-        nameField.setPromptText("Nama penumpang");
-        nameField.setMinHeight(40);
-        ageField.setPromptText("Usia penumpang");
-        ageField.setMinHeight(40);
+        nameField.setFloatingText("Nama penumpang");
+        nameField.setMaxWidth(Double.MAX_VALUE);
+        ageField.setFloatingText("Usia penumpang");
+        ageField.setMaxWidth(Double.MAX_VALUE);
 
         hbox.setSpacing(16);
+        hbox.setPrefWidth(Double.MAX_VALUE);
         hbox.getChildren().addAll(vboxNameField, vboxAgeField);
 //        vboxPassengerField.getChildren().add(new Label("Nama Penumpang " + passengerAmount));
         vboxPassengerField.getChildren().add(hbox);
