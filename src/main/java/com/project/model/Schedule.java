@@ -1,6 +1,7 @@
 package com.project.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Schedule {
     private Airline airline;
@@ -9,6 +10,7 @@ public class Schedule {
     private Airport airportDestination;
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
+    private ArrayList<Passenger> passengers;
 
     public Schedule(Airline airline, Airport airportFrom, Airport airportDestination, LocalDateTime departureTime, LocalDateTime arrivalTime, double price) {
         this.airline = airline;
