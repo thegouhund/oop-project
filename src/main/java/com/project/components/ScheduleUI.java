@@ -1,12 +1,12 @@
 package com.project.components;
 
-import com.project.model.Airline;
+import com.project.model.Passenger;
 import com.project.model.Schedule;
 import com.project.utils.TimeUtils;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
@@ -14,19 +14,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
-
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import java.io.File;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.time.LocalDateTime;
-import java.util.Locale;
+import java.util.ArrayList;
 
 public class ScheduleUI extends HBox {
-    private Label price;
+    MFXButton buyButton = new MFXButton("Buy");
+    @FXML
+    private ArrayList<Passenger> inputtedPassengers;
 
-    public ScheduleUI(Schedule schedule) {
+    public ScheduleUI(Schedule schedule, ArrayList<Passenger> inputtedPassengers) {
+        this.inputtedPassengers = inputtedPassengers;
+
         setupHBox();
         setupImageView(schedule);
         setupTimeInfo(schedule);
@@ -89,11 +90,15 @@ public class ScheduleUI extends HBox {
     }
 
     private void setupButton() {
-        MFXButton button = new MFXButton("Buy");
-        button.setStyle("-fx-background-color: #5CDB5C;-fx-text-fill:white;");
-        button.setPrefWidth(80);
-        button.setPrefHeight(40);
-        button.setRippleColor(Paint.valueOf("#85e485"));
-        this.getChildren().add(button);
+        buyButton.setStyle("-fx-background-color: #5CDB5C;-fx-text-fill:white;");
+        buyButton.setPrefWidth(80);
+        buyButton.setPrefHeight(40);
+        buyButton.setRippleColor(Paint.valueOf("#85e485"));
+
+        this.getChildren().add(buyButton);
+    }
+
+    public void setBuyButtonAction(EventHandler<ActionEvent> e) {
+        buyButton.setOnAction(e);
     }
 }
