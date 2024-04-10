@@ -26,4 +26,12 @@ public class Airline {
     public void setPriceMultiplier(double priceMultiplier) {
         this.priceMultiplier = priceMultiplier;
     }
+
+    @Override
+    public String toString() {
+        return "Airline{" +
+                "name='" + name + '\'' +
+                ", priceMultiplier=" + priceMultiplier +
+                '}';
+    }
 }

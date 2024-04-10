@@ -2,9 +2,9 @@ package com.project.model;
 
 public class Passenger {
     private String name;
-    private String age;
+    private int age;
 
-    public Passenger(String name, String age) {
+    public Passenger(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -17,11 +17,19 @@ public class Passenger {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                '}';
     }
 }
