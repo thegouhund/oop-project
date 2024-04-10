@@ -1,22 +1,12 @@
 package com.project.model;
 
 public class Airport {
-    private String name;
     private String iata;
     private String city;
 
-    public Airport(String name, String iata, String city) {
-        this.name = name;
+    public Airport(String iata, String city) {
         this.iata = iata;
         this.city = city;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getIata() {
