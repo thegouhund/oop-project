@@ -1,1082 +1,722 @@
 [
   {
     "city": "Agats",
-    "province": "South Papua",
-    "iata": "EWE",
-    "airport_name": "Ewer Airport"
+    "iata": "EWE"
   },
   {
     "city": "Alor Island",
-    "province": "East Nusa Tenggara",
-    "iata": "ARD",
-    "airport_name": "Alor Island Airport\nformerly Mali Airport"
+    "iata": "ARD"
   },
   {
     "city": "Amahai",
-    "province": "Maluku",
-    "iata": "AHI",
-    "airport_name": "Amahai Airport"
+    "iata": "AHI"
   },
   {
     "city": "Ambon",
-    "province": "Maluku",
-    "iata": "AMQ",
-    "airport_name": "Pattimura Airport\nformerly Laha Airport"
+    "iata": "AMQ"
   },
   {
     "city": "Ampana",
-    "province": "Central Sulawesi",
-    "iata": "OJU",
-    "airport_name": "Tanjung Api Airport"
+    "iata": "OJU"
   },
   {
     "city": "Anggi",
-    "province": "West Papua",
-    "iata": "AGD",
-    "airport_name": "Anggi Airport"
+    "iata": "AGD"
   },
   {
     "city": "Atambua",
-    "province": "East Nusa Tenggara",
-    "iata": "ABU",
-    "airport_name": "A. A. Bere Tallo Airport\nformerly Haliwen Airport"
+    "iata": "ABU"
   },
   {
     "city": "Ayawasi",
-    "province": "Southwest Papua",
-    "iata": "AYW",
-    "airport_name": "Ayawasi Airport"
+    "iata": "AYW"
   },
   {
     "city": "Babo",
-    "province": "West Papua",
-    "iata": "BXB",
-    "airport_name": "Babo Airport"
+    "iata": "BXB"
   },
   {
     "city": "Balikpapan",
-    "province": "East Kalimantan",
-    "iata": "BPN",
-    "airport_name": "Sultan Aji Muhammad Sulaiman Sepinggan International Airport\nformerly Sepinggan Airport"
+    "iata": "BPN"
   },
   {
     "city": "Banda",
-    "province": "Maluku",
-    "iata": "NDA",
-    "airport_name": "Bandanaira Airport"
+    "iata": "NDA"
   },
   {
     "city": "Banda Aceh",
-    "province": "Aceh",
-    "iata": "BTJ",
-    "airport_name": "Sultan Iskandar Muda International Airport\nformerly Blangbintang Airport"
+    "iata": "BTJ"
   },
   {
     "city": "Bandar Lampung",
-    "province": "Lampung",
-    "iata": "TKG",
-    "airport_name": "Radin Inten II Airport\nformerly Branti Airport"
+    "iata": "TKG"
   },
   {
     "city": "Bandung",
-    "province": "West Java",
-    "iata": "BDO",
-    "airport_name": "Husein Sastranegara Airport"
+    "iata": "BDO"
   },
   {
     "city": "Bandung",
-    "province": "West Java",
-    "iata": "KJT",
-    "airport_name": "Kertajati International Airport"
+    "iata": "KJT"
   },
   {
     "city": "Banjarmasin",
-    "province": "South Kalimantan",
-    "iata": "BDJ",
-    "airport_name": "Syamsudin Noor International Airport\nformerly Ulin Airport"
+    "iata": "BDJ"
   },
   {
     "city": "Banyuwangi",
-    "province": "East Java",
-    "iata": "BWX",
-    "airport_name": "Banyuwangi Airport\nformerly Blimbingsari Airport"
+    "iata": "BWX"
   },
   {
     "city": "Batam",
-    "province": "Riau Islands",
-    "iata": "BTH",
-    "airport_name": "Hang Nadim International Airport"
+    "iata": "BTH"
   },
   {
     "city": "Batu Islands",
-    "province": "North Sumatra",
-    "iata": "LSE",
-    "airport_name": "Lasondre Airport"
+    "iata": "LSE"
   },
   {
     "city": "Batulicin",
-    "province": "South Kalimantan",
-    "iata": "BTW",
-    "airport_name": "Batu Licin Airport"
+    "iata": "BTW"
   },
   {
     "city": "Baubau",
-    "province": "Southeast Sulawesi",
-    "iata": "BUW",
-    "airport_name": "Betoambari Airport"
+    "iata": "BUW"
   },
   {
     "city": "Bawean",
-    "province": "East Java",
-    "iata": "BXW",
-    "airport_name": "Harun Thohir Airport"
+    "iata": "BXW"
   },
   {
     "city": "Bengkulu",
-    "province": "Bengkulu",
-    "iata": "BKS",
-    "airport_name": "Fatmawati Soekarno Airport\nformerly Padangkemiling Airport"
+    "iata": "BKS"
   },
   {
     "city": "Benjina",
-    "province": "Maluku",
-    "iata": "BJK",
-    "airport_name": "Nangasuri Aru Airport"
+    "iata": "BJK"
   },
   {
     "city": "Berau",
-    "province": "East Kalimantan",
-    "iata": "BEJ",
-    "airport_name": "Kalimarau Airport"
+    "iata": "BEJ"
   },
   {
     "city": "Biak",
-    "province": "Papua",
-    "iata": "BIK",
-    "airport_name": "Frans Kaisiepo Airport"
+    "iata": "BIK"
   },
   {
     "city": "Bima",
-    "province": "West Nusa Tenggara",
-    "iata": "BMU",
-    "airport_name": "Sultan Muhammad Salahuddin Airport\nformerly Palibelo Airport"
+    "iata": "BMU"
   },
   {
     "city": "Bintuni",
-    "province": "West Papua",
-    "iata": "NTI",
-    "airport_name": "Steenkool Airport"
+    "iata": "NTI"
   },
   {
     "city": "Blangpidie",
-    "province": "Aceh",
-    "iata": "KJX",
-    "airport_name": "Blangpidie Airport"
+    "iata": "KJX"
   },
   {
     "city": "Bokondini",
-    "province": "Highland Papua",
-    "iata": "BUI",
-    "airport_name": "Bokondini Airport"
+    "iata": "BUI"
   },
   {
     "city": "Bontang",
-    "province": "East Kalimantan",
-    "iata": "BXT",
-    "airport_name": "PT Badak Bontang Airport"
+    "iata": "BXT"
   },
   {
     "city": "Buleleng",
-    "province": "Bali",
-    "iata": "WSN",
-    "airport_name": "Lt. Col. Wisnu Airfield"
+    "iata": "WSN"
   },
   {
     "city": "Buli",
-    "province": "North Maluku",
-    "iata": "PGQ",
-    "airport_name": "Buli Airport"
+    "iata": "PGQ"
   },
   {
     "city": "Buol",
-    "province": "Central Sulawesi",
-    "iata": "UOL",
-    "airport_name": "Pogogul Airport"
+    "iata": "UOL"
   },
   {
     "city": "Cepu",
-    "province": "Central Java",
-    "iata": "CPF",
-    "airport_name": "Ngloram Airport"
+    "iata": "CPF"
   },
   {
     "city": "Cilacap",
-    "province": "Central Java",
-    "iata": "CXP",
-    "airport_name": "Tunggul Wulung Airport"
+    "iata": "CXP"
   },
   {
     "city": "Cirebon",
-    "province": "West Java",
-    "iata": "CBN",
-    "airport_name": "Cakrabhuwana Airport\nformerly Penggung Airport"
+    "iata": "CBN"
   },
   {
     "city": "Dabo",
-    "province": "Riau Islands",
-    "iata": "SIQ",
-    "airport_name": "Dabo Airport"
+    "iata": "SIQ"
   },
   {
     "city": "Dekai",
-    "province": "Highland Papua",
-    "iata": "DEX",
-    "airport_name": "Nop Goliat Dekai Airport"
+    "iata": "DEX"
   },
   {
     "city": "Denpasar",
-    "province": "Bali",
-    "iata": "DPS",
-    "airport_name": "I Gusti Ngurah Rai International Airport"
+    "iata": "DPS"
   },
   {
     "city": "Derawan Islands",
-    "province": "East Kalimantan",
-    "iata": "RTU",
-    "airport_name": "Maratua Airport"
+    "iata": "RTU"
   },
   {
     "city": "Dobo",
-    "province": "Maluku",
-    "iata": "DOB",
-    "airport_name": "Rar Gwamar Airport"
+    "iata": "DOB"
   },
   {
     "city": "Dumai",
-    "province": "Riau",
-    "iata": "DUM",
-    "airport_name": "Pinang Kampai Airport"
+    "iata": "DUM"
   },
   {
     "city": "Enarotali",
-    "province": "Central Papua",
-    "iata": "EWI",
-    "airport_name": "Enarotali Airport"
+    "iata": "EWI"
   },
   {
     "city": "Ende",
-    "province": "East Nusa Tenggara",
-    "iata": "ENE",
-    "airport_name": "H. Hasan Aroeboesman Airport\nformerly Ippi Airport"
+    "iata": "ENE"
   },
   {
     "city": "Enggano",
-    "province": "Bengkulu",
-    "iata": "—",
-    "airport_name": "Enggano Airport"
+    "iata": "—"
   },
   {
     "city": "Fakfak",
-    "province": "West Papua",
-    "iata": "FKQ",
-    "airport_name": "Fakfak Torea Airport"
+    "iata": "FKQ"
   },
   {
     "city": "Galela",
-    "province": "North Maluku",
-    "iata": "GLX",
-    "airport_name": "Gamar Malamo Airport"
+    "iata": "GLX"
   },
   {
     "city": "Gorontalo",
-    "province": "Gorontalo",
-    "iata": "GTO",
-    "airport_name": "Djalaluddin Airport\nformerly Tolotio Airport"
+    "iata": "GTO"
   },
   {
     "city": "Gunung Sitoli",
-    "province": "North Sumatra",
-    "iata": "GNS",
-    "airport_name": "Binaka Airport"
+    "iata": "GNS"
   },
   {
     "city": "Jakarta",
-    "province": "Special Capital Region of Jakarta",
-    "iata": "HLP",
-    "airport_name": "Halim Perdanakusuma Airport"
+    "iata": "HLP"
   },
   {
     "city": "Jakarta",
-    "province": "Banten",
-    "iata": "CGK",
-    "airport_name": "Soekarno–Hatta International Airport"
+    "iata": "CGK"
   },
   {
     "city": "Jambi",
-    "province": "Jambi",
-    "iata": "DJB",
-    "airport_name": "Sultan Thaha Airport\nformerly Palmerah Airport"
+    "iata": "DJB"
   },
   {
     "city": "Jayapura",
-    "province": "Papua",
-    "iata": "DJJ",
-    "airport_name": "Dortheys Hiyo Eluay International Airport\nformerly Sentani Airport"
+    "iata": "DJJ"
   },
   {
     "city": "Jemaja Island",
-    "province": "Riau Islands",
-    "iata": "LMU",
-    "airport_name": "Letung Airport"
+    "iata": "LMU"
   },
   {
     "city": "Jember",
-    "province": "East Java",
-    "iata": "JBB",
-    "airport_name": "Notohadinegoro Airport"
+    "iata": "JBB"
   },
   {
     "city": "Kaimana",
-    "province": "West Papua",
-    "iata": "KNG",
-    "airport_name": "Utarom Airport"
+    "iata": "KNG"
   },
   {
     "city": "Kao",
-    "province": "North Maluku",
-    "iata": "KAZ",
-    "airport_name": "Kuabang Airport"
+    "iata": "KAZ"
   },
   {
     "city": "Karimunjawa",
-    "province": "Central Java",
-    "iata": "KWB",
-    "airport_name": "Dewadaru Airport"
+    "iata": "KWB"
   },
   {
     "city": "Kendari",
-    "province": "Southeast Sulawesi",
-    "iata": "KDI",
-    "airport_name": "Haluoleo Airport\nformerly Wolter Monginsidi Airport"
+    "iata": "KDI"
   },
   {
     "city": "Kerinci",
-    "province": "Jambi",
-    "iata": "KRC",
-    "airport_name": "Depati Parbo Airport"
+    "iata": "KRC"
   },
   {
     "city": "Ketapang",
-    "province": "West Kalimantan",
-    "iata": "KTG",
-    "airport_name": "Rahadi Osman Airport"
+    "iata": "KTG"
   },
   {
     "city": "Kisar",
-    "province": "Maluku",
-    "iata": "KSX",
-    "airport_name": "John Becker Airport"
+    "iata": "KSX"
   },
   {
     "city": "Kolaka",
-    "province": "Southeast Sulawesi",
-    "iata": "KXB",
-    "airport_name": "Sangia Nibandera Airport"
+    "iata": "KXB"
   },
   {
     "city": "Kotabaru",
-    "province": "South Kalimantan",
-    "iata": "KBU",
-    "airport_name": "Gusti Syamsir Alam Airport\nformerly Stagen Airport"
+    "iata": "KBU"
   },
   {
     "city": "Krui",
-    "province": "Lampung",
-    "iata": "TFY",
-    "airport_name": "Muhammad Taufiq Kiemas Airport"
+    "iata": "TFY"
   },
   {
     "city": "Kuala Pembuang",
-    "province": "Central Kalimantan",
-    "iata": "KLP",
-    "airport_name": "Seruyan Kuala Pembuang Airport"
+    "iata": "KLP"
   },
   {
     "city": "Kupang",
-    "province": "East Nusa Tenggara",
-    "iata": "KOE",
-    "airport_name": "El Tari Airport\nformerly Penfui Airport"
+    "iata": "KOE"
   },
   {
     "city": "Kutacane",
-    "province": "Aceh",
-    "iata": "LSR",
-    "airport_name": "Alas Leuser Airport"
+    "iata": "LSR"
   },
   {
     "city": "Labuan Bajo",
-    "province": "East Nusa Tenggara",
-    "iata": "LBJ",
-    "airport_name": "Komodo Airport\nformerly Mutiara II Airport"
+    "iata": "LBJ"
   },
   {
     "city": "Labuha",
-    "province": "North Maluku",
-    "iata": "LAH",
-    "airport_name": "Oesman Sadik Airport"
+    "iata": "LAH"
   },
   {
     "city": "Larantuka",
-    "province": "East Nusa Tenggara",
-    "iata": "LKA",
-    "airport_name": "Gewayantana Airport"
+    "iata": "LKA"
   },
   {
     "city": "Lewoleba",
-    "province": "East Nusa Tenggara",
-    "iata": "LWE",
-    "airport_name": "Wonopito Airport"
+    "iata": "LWE"
   },
   {
     "city": "Lhokseumawe",
-    "province": "Aceh",
-    "iata": "LSW",
-    "airport_name": "Malikus Saleh Airport"
+    "iata": "LSW"
   },
   {
     "city": "Long Apung",
-    "province": "North Kalimantan",
-    "iata": "LPU",
-    "airport_name": "Long Apung Airport"
+    "iata": "LPU"
   },
   {
     "city": "Long Bawan",
-    "province": "North Kalimantan",
-    "iata": "LBW",
-    "airport_name": "Juvai Semaring Airport"
+    "iata": "LBW"
   },
   {
     "city": "Lubuklinggau",
-    "province": "South Sumatra",
-    "iata": "LLJ",
-    "airport_name": "Silampari Airport"
+    "iata": "LLJ"
   },
   {
     "city": "Luwuk",
-    "province": "Central Sulawesi",
-    "iata": "LUW",
-    "airport_name": "Syukuran Aminuddin Amir Airport\nformerly Bubung Airport"
+    "iata": "LUW"
   },
   {
     "city": "Mahakam Ulu",
-    "province": "East Kalimantan",
-    "iata": "DTD",
-    "airport_name": "Datah Dawai Airport"
+    "iata": "DTD"
   },
   {
     "city": "Makassar",
-    "province": "South Sulawesi",
-    "iata": "UPG",
-    "airport_name": "Sultan Hasanuddin International Airport"
+    "iata": "UPG"
   },
   {
     "city": "Malang",
-    "province": "East Java",
-    "iata": "MLG",
-    "airport_name": "Abdul Rachman Saleh Airport"
+    "iata": "MLG"
   },
   {
     "city": "Malinau",
-    "province": "North Kalimantan",
-    "iata": "LNU",
-    "airport_name": "Robert Atty Bessing Airport"
+    "iata": "LNU"
   },
   {
     "city": "Mamuju",
-    "province": "West Sulawesi",
-    "iata": "MJU",
-    "airport_name": "Tampa Padang Airport"
+    "iata": "MJU"
   },
   {
     "city": "Manado",
-    "province": "North Sulawesi",
-    "iata": "MDC",
-    "airport_name": "Sam Ratulangi International Airport"
+    "iata": "MDC"
   },
   {
     "city": "Manokwari",
-    "province": "West Papua",
-    "iata": "MKW",
-    "airport_name": "Rendani Airport"
+    "iata": "MKW"
   },
   {
     "city": "Masamba",
-    "province": "South Sulawesi",
-    "iata": "MXB",
-    "airport_name": "Andi Jemma Airport"
+    "iata": "MXB"
   },
   {
     "city": "Matak",
-    "province": "Riau Islands",
-    "iata": "MWK",
-    "airport_name": "Matak Airport"
+    "iata": "MWK"
   },
   {
     "city": "Mataram",
-    "province": "West Nusa Tenggara",
-    "iata": "LOP",
-    "airport_name": "Zainuddin Abdul Madjid International Airport\nformerly Lombok International Airport"
+    "iata": "LOP"
   },
   {
     "city": "Maumere",
-    "province": "East Nusa Tenggara",
-    "iata": "MOF",
-    "airport_name": "Frans Xavier Seda Airport"
+    "iata": "MOF"
   },
   {
     "city": "Medan",
-    "province": "North Sumatra",
-    "iata": "KNO",
-    "airport_name": "Kualanamu International Airport"
+    "iata": "KNO"
   },
   {
     "city": "Melak",
-    "province": "East Kalimantan",
-    "iata": "GHS",
-    "airport_name": "West Kutai Melalan Airport"
+    "iata": "GHS"
   },
   {
     "city": "Melonguane",
-    "province": "North Sulawesi",
-    "iata": "MNA",
-    "airport_name": "Melangguane Airport"
+    "iata": "MNA"
   },
   {
     "city": "Merauke",
-    "province": "South Papua",
-    "iata": "MKQ",
-    "airport_name": "Mopah Airport"
+    "iata": "MKQ"
   },
   {
     "city": "Meulaboh",
-    "province": "Aceh",
-    "iata": "MEQ",
-    "airport_name": "Cut Nyak Dhien Airport"
+    "iata": "MEQ"
   },
   {
     "city": "Miangas",
-    "province": "North Sulawesi",
-    "iata": "—",
-    "airport_name": "Miangas Airport"
+    "iata": "—"
   },
   {
     "city": "Moa",
-    "province": "Maluku",
-    "iata": "JIO",
-    "airport_name": "Jos Orno Imsula Airport"
+    "iata": "JIO"
   },
   {
     "city": "Morotai",
-    "province": "North Maluku",
-    "iata": "OTI",
-    "airport_name": "Leo Wattimena Airport"
+    "iata": "OTI"
   },
   {
     "city": "Morowali",
-    "province": "Central Sulawesi",
-    "iata": "MOH",
-    "airport_name": "Maleo Airport"
+    "iata": "MOH"
   },
   {
     "city": "Muara Bungo",
-    "province": "Jambi",
-    "iata": "BUU",
-    "airport_name": "Muara Bungo Airport"
+    "iata": "BUU"
   },
   {
     "city": "Muara Teweh",
-    "province": "Central Kalimantan",
-    "iata": "HMS",
-    "airport_name": "Haji Muhammad Sidik Airport"
+    "iata": "HMS"
   },
   {
     "city": "Mukomuko",
-    "province": "Bengkulu",
-    "iata": "MPC",
-    "airport_name": "Mukomuko Airport"
+    "iata": "MPC"
   },
   {
     "city": "Nabire",
-    "province": "Central Papua",
-    "iata": "NBX",
-    "airport_name": "Douw Aturure Airport"
+    "iata": "NBX"
   },
   {
     "city": "Namlea",
-    "province": "Maluku",
-    "iata": "NAM",
-    "airport_name": "Namlea Airport"
+    "iata": "NAM"
   },
   {
     "city": "Namrole",
-    "province": "Maluku",
-    "iata": "NRE",
-    "airport_name": "Namrole Airport"
+    "iata": "NRE"
   },
   {
     "city": "Nanga Pinoh",
-    "province": "West Kalimantan",
-    "iata": "NPO",
-    "airport_name": "Nanga Pinoh Airport"
+    "iata": "NPO"
   },
   {
     "city": "Noemfoor",
-    "province": "Papua",
-    "iata": "FOO",
-    "airport_name": "Kornasoren Airport"
+    "iata": "FOO"
   },
   {
     "city": "Nunukan",
-    "province": "North Kalimantan",
-    "iata": "NNX",
-    "airport_name": "Nunukan Airport"
+    "iata": "NNX"
   },
   {
     "city": "Oksibil",
-    "province": "Highland Papua",
-    "iata": "OKL",
-    "airport_name": "Oksibil Airport"
+    "iata": "OKL"
   },
   {
     "city": "Padang",
-    "province": "West Sumatra",
-    "iata": "PDG",
-    "airport_name": "Minangkabau International Airport"
+    "iata": "PDG"
   },
   {
     "city": "Padang Sidempuan",
-    "province": "North Sumatra",
-    "iata": "AEG",
-    "airport_name": "Aek Godang Airport"
+    "iata": "AEG"
   },
   {
     "city": "Pagar Alam",
-    "province": "South Sumatra",
-    "iata": "PXA",
-    "airport_name": "Atung Bungsu Airport"
+    "iata": "PXA"
   },
   {
     "city": "Palangkaraya",
-    "province": "Central Kalimantan",
-    "iata": "PKY",
-    "airport_name": "Tjilik Riwut Airport"
+    "iata": "PKY"
   },
   {
     "city": "Palembang",
-    "province": "South Sumatra",
-    "iata": "PLM",
-    "airport_name": "Sultan Mahmud Badaruddin II International Airport"
+    "iata": "PLM"
   },
   {
     "city": "Palopo",
-    "province": "South Sulawesi",
-    "iata": "LLO",
-    "airport_name": "Bua Airport"
+    "iata": "LLO"
   },
   {
     "city": "Palu",
-    "province": "Central Sulawesi",
-    "iata": "PLW",
-    "airport_name": "Mutiara SIS Al-Jufrie Airport"
+    "iata": "PLW"
   },
   {
     "city": "Pangandaran",
-    "province": "West Java",
-    "iata": "–",
-    "airport_name": "Cijulang Nusawiru Airport"
+    "iata": "–"
   },
   {
     "city": "Pangkal Pinang",
-    "province": "Bangka–Belitung Islands",
-    "iata": "PGK",
-    "airport_name": "Depati Amir Airport"
+    "iata": "PGK"
   },
   {
     "city": "Pangkalanbun",
-    "province": "Central Kalimantan",
-    "iata": "PKN",
-    "airport_name": "Iskandar Airport"
+    "iata": "PKN"
   },
   {
     "city": "Pasir Pengaraian",
-    "province": "Riau",
-    "iata": "PPR",
-    "airport_name": "Tuanku Tambusai Airport"
+    "iata": "PPR"
   },
   {
     "city": "Pekanbaru",
-    "province": "Riau",
-    "iata": "PKU",
-    "airport_name": "Sultan Syarif Kasim II International Airport"
+    "iata": "PKU"
   },
   {
     "city": "Pontianak",
-    "province": "West Kalimantan",
-    "iata": "PNK",
-    "airport_name": "Supadio International Airport"
+    "iata": "PNK"
   },
   {
     "city": "Poso",
-    "province": "Central Sulawesi",
-    "iata": "PSJ",
-    "airport_name": "Kasiguncu Airport"
+    "iata": "PSJ"
   },
   {
     "city": "Purbalingga",
-    "province": "Central Java",
-    "iata": "PWL",
-    "airport_name": "Jenderal Besar Soedirman Airport"
+    "iata": "PWL"
   },
   {
     "city": "Putussibau",
-    "province": "West Kalimantan",
-    "iata": "PSU",
-    "airport_name": "Pangsuma Airport"
+    "iata": "PSU"
   },
   {
     "city": "Raha",
-    "province": "Southeast Sulawesi",
-    "iata": "RAQ",
-    "airport_name": "Sugimanuru Airport"
+    "iata": "RAQ"
   },
   {
     "city": "Ranai",
-    "province": "Riau Islands",
-    "iata": "NTX",
-    "airport_name": "Ranai Airport"
+    "iata": "NTX"
   },
   {
     "city": "Rengat",
-    "province": "Riau Islands",
-    "iata": "RGT",
-    "airport_name": "Japura Airport"
+    "iata": "RGT"
   },
   {
     "city": "Rote",
-    "province": "East Nusa Tenggara",
-    "iata": "RTI",
-    "airport_name": "David Constantijn Saudale Airport"
+    "iata": "RTI"
   },
   {
     "city": "Ruteng",
-    "province": "East Nusa Tenggara",
-    "iata": "RTG",
-    "airport_name": "Frans Sales Lega Airport"
+    "iata": "RTG"
   },
   {
     "city": "Sabang",
-    "province": "Aceh",
-    "iata": "SBG",
-    "airport_name": "Maimun Saleh Airport"
+    "iata": "SBG"
   },
   {
     "city": "Sabu",
-    "province": "East Nusa Tenggara",
-    "iata": "SAU",
-    "airport_name": "Tardamu Airport"
+    "iata": "SAU"
   },
   {
     "city": "Samarinda",
-    "province": "East Kalimantan",
-    "iata": "AAP",
-    "airport_name": "APT Pranoto (Samarinda) International Airport"
+    "iata": "AAP"
   },
   {
     "city": "Sampit",
-    "province": "Central Kalimantan",
-    "iata": "SMQ",
-    "airport_name": "H. Asan Airport\n"
+    "iata": "SMQ"
   },
   {
     "city": "Sanana",
-    "province": "North Maluku",
-    "iata": "SQN",
-    "airport_name": "Emalamo Airport"
+    "iata": "SQN"
   },
   {
     "city": "Sangihe",
-    "province": "North Sulawesi",
-    "iata": "NAH",
-    "airport_name": "Naha Airport"
+    "iata": "NAH"
   },
   {
     "city": "Saumlaki",
-    "province": "Maluku",
-    "iata": "SXK",
-    "airport_name": "Mathilda Batlayeri Airport"
+    "iata": "SXK"
   },
   {
     "city": "Seko",
-    "province": "South Sulawesi",
-    "iata": "SKO",
-    "airport_name": "Seko Airport"
+    "iata": "SKO"
   },
   {
     "city": "Selayar",
-    "province": "South Sulawesi",
-    "iata": "KSR",
-    "airport_name": "H. Aroeppala Airport"
+    "iata": "KSR"
   },
   {
     "city": "Semarang",
-    "province": "Central Java",
-    "iata": "SRG",
-    "airport_name": "Jendral Ahmad Yani International Airport"
+    "iata": "SRG"
   },
   {
     "city": "Serui",
-    "province": "Papua",
-    "iata": "WABO",
-    "airport_name": "Stevanus Rumbewas Airport"
+    "iata": "WABO"
   },
   {
     "city": "Sibolga",
-    "province": "North Sumatra",
-    "iata": "FLZ",
-    "airport_name": "Ferdinand Lumban Tobing Airport\nformerly Pinangsori Airport"
+    "iata": "FLZ"
   },
   {
     "city": "Siborong-Borong",
-    "province": "North Sumatra",
-    "iata": "DTB",
-    "airport_name": "Sisingamangaraja XII International Airport\nformerly Silangit Airport"
+    "iata": "DTB"
   },
   {
     "city": "Simalungun",
-    "province": "North Sumatra",
-    "iata": "SIW",
-    "airport_name": "Sibisa Airport"
+    "iata": "SIW"
   },
   {
     "city": "Simpang Ampek",
-    "province": "West Sumatra",
-    "iata": "—",
-    "airport_name": "Pusako Anak Nagari Airport"
+    "iata": "—"
   },
   {
     "city": "Sinabang",
-    "province": "Aceh",
-    "iata": "LKI",
-    "airport_name": "Lasikin Airport"
+    "iata": "LKI"
   },
   {
     "city": "Singkawang",
-    "province": "West Kalimantan",
-    "iata": "SKJ",
-    "airport_name": "Singkawang Airport"
+    "iata": "SKJ"
   },
   {
     "city": "Singkil",
-    "province": "Aceh",
-    "iata": "—",
-    "airport_name": "Syekh Hamzah Fansyuri Airport"
+    "iata": "—"
   },
   {
     "city": "Sintang",
-    "province": "West Kalimantan",
-    "iata": "SQG",
-    "airport_name": "Tebelian Airport"
+    "iata": "SQG"
   },
   {
     "city": "Sipora",
-    "province": "West Sumatra",
-    "iata": "RKI",
-    "airport_name": "Rokot Airport"
+    "iata": "RKI"
   },
   {
     "city": "Soroako",
-    "province": "South Sulawesi",
-    "iata": "SQR",
-    "airport_name": "Soroako Airport"
+    "iata": "SQR"
   },
   {
     "city": "Sorong",
-    "province": "Southwest Papua",
-    "iata": "SOQ",
-    "airport_name": "Domine Edward Osok Airport"
+    "iata": "SOQ"
   },
   {
     "city": "South Tangerang",
-    "province": "Banten",
-    "iata": "PCB",
-    "airport_name": "Pondok Cabe Airport"
+    "iata": "PCB"
   },
   {
     "city": "Sumbawa Besar",
-    "province": "West Nusa Tenggara",
-    "iata": "SWQ",
-    "airport_name": "Sultan Muhammad Kaharuddin III Airport\nformerly Brangbiji Airport"
+    "iata": "SWQ"
   },
   {
     "city": "Sumenep",
-    "province": "East Java",
-    "iata": "SUP",
-    "airport_name": "Trunojoyo Airport"
+    "iata": "SUP"
   },
   {
     "city": "Sungai Pakning",
-    "province": "Riau",
-    "iata": "SEQ",
-    "airport_name": "Sei Pakning Airport"
+    "iata": "SEQ"
   },
   {
     "city": "Surabaya",
-    "province": "East Java",
-    "iata": "SUB",
-    "airport_name": "Juanda International Airport"
+    "iata": "SUB"
   },
   {
     "city": "Surakarta",
-    "province": "Central Java",
-    "iata": "SOC",
-    "airport_name": "Adisumarmo International Airport"
+    "iata": "SOC"
   },
   {
     "city": "Takengon",
-    "province": "Aceh",
-    "iata": "TXE",
-    "airport_name": "Rembele Airport"
+    "iata": "TXE"
   },
   {
     "city": "Tambolaka",
-    "province": "East Nusa Tenggara",
-    "iata": "TMC",
-    "airport_name": "Lede Kalumbang Airport"
+    "iata": "TMC"
   },
   {
     "city": "Tana Toraja",
-    "province": "South Sulawesi",
-    "iata": "TRT",
-    "airport_name": "Toraja Airport"
+    "iata": "TRT"
   },
   {
     "city": "Tanahmerah",
-    "province": "South Papua",
-    "iata": "TMH",
-    "airport_name": "Tanah Merah Airport"
+    "iata": "TMH"
   },
   {
     "city": "Tangerang",
-    "province": "Banten",
-    "iata": "—",
-    "airport_name": "Budiarto Airport"
+    "iata": "—"
   },
   {
     "city": "Tanjung Balai Karimun",
-    "province": "Riau Islands",
-    "iata": "TJB",
-    "airport_name": "Raja Haji Abdullah Airport\nformerly Sei Bati Airport"
+    "iata": "TJB"
   },
   {
     "city": "Tanjung Pandan",
-    "province": "Bangka–Belitung Islands",
-    "iata": "TJQ",
-    "airport_name": "H.A.S. Hanandjoeddin Airport\nformerly Buluh Tumbang Airport"
+    "iata": "TJQ"
   },
   {
     "city": "Tanjung Pinang",
-    "province": "Riau Islands",
-    "iata": "TNJ",
-    "airport_name": "Raja Haji Fisabilillah Airport\nformerly Kijang Airport"
+    "iata": "TNJ"
   },
   {
     "city": "Tanjung Selor",
-    "province": "North Kalimantan",
-    "iata": "TJS",
-    "airport_name": "Tanjung Harapan Airport\n"
+    "iata": "TJS"
   },
   {
     "city": "Tarakan",
-    "province": "North Kalimantan",
-    "iata": "TRK",
-    "airport_name": "Juwata International Airport*"
+    "iata": "TRK"
   },
   {
     "city": "Tasikmalaya",
-    "province": "West Java",
-    "iata": "TSY",
-    "airport_name": "Wiriadinata Airport"
+    "iata": "TSY"
   },
   {
     "city": "Tembilahan",
-    "province": "Riau",
-    "iata": "—",
-    "airport_name": "Tempuling Airport"
+    "iata": "—"
   },
   {
     "city": "Ternate",
-    "province": "North Maluku",
-    "iata": "TTE",
-    "airport_name": "Sultan Babullah Airport"
+    "iata": "TTE"
   },
   {
     "city": "Timika",
-    "province": "Central Papua",
-    "iata": "TIM",
-    "airport_name": "Moses Kilangin Airport"
+    "iata": "TIM"
   },
   {
     "city": "Tual",
-    "province": "Maluku",
-    "iata": "LUV",
-    "airport_name": "Karel Sadsuitubun Airport"
+    "iata": "LUV"
   },
   {
     "city": "Waingapu",
-    "province": "East Nusa Tenggara",
-    "iata": "WGP",
-    "airport_name": "Umbu Mehang Kunda Airport\nformerly Mau Hau Airport"
+    "iata": "WGP"
   },
   {
     "city": "Waisai",
-    "province": "Southwest Papua",
-    "iata": "RJM",
-    "airport_name": "Marinda Airport"
+    "iata": "RJM"
   },
   {
     "city": "Wamena",
-    "province": "Highland Papua",
-    "iata": "WMX",
-    "airport_name": "Wamena Airport"
+    "iata": "WMX"
   },
   {
     "city": "Wangi-Wangi",
-    "province": "Southeast Sulawesi",
-    "iata": "WNI",
-    "airport_name": "Matahora Airport"
+    "iata": "WNI"
   },
   {
     "city": "Wasior",
-    "province": "West Papua",
-    "iata": "WSR",
-    "airport_name": "Wasior Airport"
+    "iata": "WSR"
   },
   {
     "city": "Werur",
-    "province": "Southwest Papua",
-    "iata": "WRR",
-    "airport_name": "Werur Airport"
+    "iata": "WRR"
   },
   {
     "city": "Yogyakarta",
-    "province": "Special Region of Yogyakarta",
-    "iata": "JOG",
-    "airport_name": "Adisucipto Airport*\nformerly Maguwo Airport"
+    "iata": "JOG"
   },
   {
     "city": "Yogyakarta",
-    "province": "Special Region of Yogyakarta",
-    "iata": "YIA",
-    "airport_name": "Yogyakarta International Airport"
+    "iata": "YIA"
   }
 ]
