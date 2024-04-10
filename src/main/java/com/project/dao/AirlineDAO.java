@@ -51,7 +51,6 @@ public class AirlineDAO extends DAO<Airline> {
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE airline SET name = ? WHERE id = ?");
             statement.setString(1, airline.getName());
-            // Set properties lainnya sesuai dengan kolom-kolom yang ada dalam tabel
             statement.setInt(2, id);
             statement.executeUpdate();
         } catch (SQLException e) {
