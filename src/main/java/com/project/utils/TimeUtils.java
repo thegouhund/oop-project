@@ -11,9 +11,13 @@ public class TimeUtils {
 
     public static LocalDateTime strToLocalDateTime(String strDate) {
         strDate += " 08:00:00";
-        System.out.println(strDate);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return LocalDateTime.parse(strDate, formatter);
+    }
+
+    public static String localDateTimeToStr(LocalDateTime dateTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return dateTime.format(formatter);
     }
 
     public static String localDateGetDate(LocalDateTime dateTime) {
