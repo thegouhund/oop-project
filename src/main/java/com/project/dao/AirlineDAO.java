@@ -32,7 +32,7 @@ public class AirlineDAO extends DAO<Airline> {
     @Override
     public ArrayList<Airline> getAll() {
         Airline airline;
-        ArrayList<Airline> airlineList = new ArrayList<Airline>();
+        ArrayList<Airline> airlineList = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline");
             ResultSet result = statement.executeQuery();
@@ -44,6 +44,22 @@ public class AirlineDAO extends DAO<Airline> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int getIdByName(String name) {
+        try {
+            name = name.replace("\"", "");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline WHERE name = ?");
+            statement.setString(1, name);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                return result.getInt("id");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
     }
 
     @Override
@@ -68,6 +84,7 @@ public class AirlineDAO extends DAO<Airline> {
             throw new RuntimeException(e);
         }
     }
+
 
     @Override
     public void add(Airline airline) {

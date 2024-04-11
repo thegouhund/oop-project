@@ -32,7 +32,7 @@ public class PassengerDAO extends DAO<Passenger> {
     @Override
     public ArrayList<Passenger> getAll() {
         Passenger passenger;
-        ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
+        ArrayList<Passenger> passengerList = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger");
             ResultSet result = statement.executeQuery();
@@ -44,6 +44,22 @@ public class PassengerDAO extends DAO<Passenger> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int getIdByName(String name) {
+        try {
+            name = name.replace("\"", "");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger WHERE name = ?");
+            statement.setString(1, name);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                return result.getInt("id");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
     }
 
     @Override

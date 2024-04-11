@@ -32,7 +32,7 @@ public class AirportDAO extends DAO<Airport> {
     @Override
     public ArrayList<Airport> getAll() {
         Airport airport;
-        ArrayList<Airport> airportList = new ArrayList<Airport>();
+        ArrayList<Airport> airportList = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airport");
             ResultSet result = statement.executeQuery();
@@ -44,6 +44,20 @@ public class AirportDAO extends DAO<Airport> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int getIdByIata(String iata) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM airport WHERE iata = ?");
+            statement.setString(1, iata);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                return result.getInt("id");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
     }
 
     @Override
