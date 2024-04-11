@@ -24,8 +24,6 @@ public class App extends Application {
                 .setGlobal();
 
         Scene scene = new Scene(fxmlLoader.load());
-//        setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
-        // scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.setTitle("Form Pemesanan");
         stage.setScene(scene);
         stage.show();
