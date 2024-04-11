@@ -1,10 +1,8 @@
 package com.project.components;
 
-import com.project.model.Passenger;
 import com.project.model.Schedule;
 import com.project.utils.TimeUtils;
 import io.github.palexdev.materialfx.controls.MFXButton;
-import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -18,16 +16,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import java.io.File;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 public class ScheduleUI extends HBox {
     MFXButton buyButton = new MFXButton("Buy");
-    @FXML
-    private ArrayList<Passenger> inputtedPassengers;
 
-    public ScheduleUI(Schedule schedule, ArrayList<Passenger> inputtedPassengers) {
-        this.inputtedPassengers = inputtedPassengers;
-
+    public ScheduleUI(Schedule schedule) {
         setupHBox();
         setupImageView(schedule);
         setupTimeInfo(schedule);
@@ -46,9 +39,9 @@ public class ScheduleUI extends HBox {
 
     private void setupImageView(Schedule schedule) {
         ImageView imgViewLogo = new ImageView();
-        String filename = "src/main/resources/com/project/img/airlines/" + schedule.getAirline().getName().toLowerCase().replace(" ", "").replace("\"", "") + ".png";
-        File file = new File(filename);
-        System.out.println(filename);
+        String file_dir = "src/main/resources/com/project/img/airlines/";
+        String filename = schedule.getAirline().getName().toLowerCase().replace(" ", "").replace("\"", "") + ".png";
+        File file = new File(file_dir + filename);
 
         Image imgLogo = new Image(file.toURI().toString());
         imgViewLogo.setImage(imgLogo);

@@ -1,14 +1,17 @@
 package com.project.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Ticket {
-    private ArrayList<Passenger> passengers;
+    private ArrayList<Passenger> passengers = new ArrayList<>();
     private Schedule schedule;
 
     public Ticket(ArrayList<Passenger> passengers, Schedule schedule) {
         this.passengers = passengers;
+        this.schedule = schedule;
+    }
+
+    public Ticket(Schedule schedule) {
         this.schedule = schedule;
     }
 
