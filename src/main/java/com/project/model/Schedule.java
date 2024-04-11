@@ -21,6 +21,9 @@ public class Schedule {
         this.arrivalTime = arrivalTime;
     }
 
+    public Schedule() {
+    }
+
     public Airline getAirline() {
         return airline;
     }
@@ -45,7 +48,7 @@ public class Schedule {
         this.arrivalTime = arrivalTime;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
