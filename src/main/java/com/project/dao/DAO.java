@@ -18,7 +18,8 @@ public abstract class DAO<T> {
 
     public abstract void delete(int id);
 
-    public abstract void add(T entity);
+    public void add(T entity) {
+    }
 
 }
 
