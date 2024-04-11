@@ -9,7 +9,6 @@ import java.util.random.RandomGenerator;
 import java.io.File;
 import java.io.IOException;
 
-import static javafx.collections.FXCollections.observableArrayList;
 
 public class AirlineFactory {
     public static Airline generate() {
