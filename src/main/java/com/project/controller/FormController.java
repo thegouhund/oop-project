@@ -2,11 +2,14 @@ package com.project.controller;
 
 import com.project.dao.AirportDAO;
 import com.project.dao.PassengerDAO;
+import com.project.dao.ScheduleDAO;
+import com.project.dao.TicketDAO;
 import com.project.factory.ScheduleFactory;
 import com.project.model.Airport;
 import com.project.model.Passenger;
 import com.project.model.Schedule;
 import com.project.components.ScheduleUI;
+import com.project.model.Ticket;
 import com.project.utils.DatabaseUtils;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
@@ -93,26 +96,18 @@ public class FormController {
         int passengerAmount = getPassengerAmount();
 
         HBox hbox = new HBox();
-//        VBox vboxNameField = new VBox();
-//        Label labelNameField = new Label("Nama Penumpang " + passengerAmount);
         MFXTextField nameField = new MFXTextField();
-//        vboxNameField.setPrefWidth(254);
 
-        VBox vboxAgeField = new VBox();
-//        Label labelAgeField = new Label("Usia Penumpang " + passengerAmount);
         MFXTextField ageField = new MFXTextField();
-//        vboxAgeField.getChildren().addAll(ageField);
-//        vboxAgeField.setPrefWidth(254);
 
-        nameField.setFloatingText("Nama penumpang " + getPassengerAmount());
+        nameField.setFloatingText("Nama penumpang " + passengerAmount);
         nameField.setMinWidth(200);
-        ageField.setFloatingText("Usia penumpang " + getPassengerAmount());
+        ageField.setFloatingText("Usia penumpang " + passengerAmount);
         ageField.setMinWidth(200);
 
         hbox.setSpacing(16);
         hbox.setMinWidth(400);
         hbox.getChildren().addAll(nameField, ageField);
-//        vboxPassengerField.getChildren().add(new Label("Nama Penumpang " + passengerAmount));
         vboxPassengerField.getChildren().add(hbox);
     }
 
@@ -138,25 +133,28 @@ public class FormController {
         return passengers;
     }
 
-    private void onTicketBuy() {
-        // add passenger to db
-        PassengerDAO passengerDao = new PassengerDAO(connection);
-        for (Passenger passenger : getInputtedPassengers()) {
-            passengerDao.add(passenger);
-            System.out.println(passenger);
-        }
-        // add schedule to db
-        // create ticket
+    private void onTicketBuy(Schedule schedule) {
+        PassengerDAO passengerDAO = new PassengerDAO(connection);
+        ScheduleDAO scheduleDAO = new ScheduleDAO(connection);
+        TicketDAO ticketDAO = new TicketDAO(connection);
 
+        Ticket ticket = new Ticket(schedule);
+        for (Passenger passenger : getInputtedPassengers()) {
+            passengerDAO.add(passenger);
+            ticket.getPassengers().add(passenger);
+        }
+
+        scheduleDAO.add(schedule);
+        ticketDAO.add(ticket, schedule);
     }
 
     @FXML
     private void onSubmit() {
         Schedule schedule = ScheduleFactory.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
-        ScheduleUI scheduleUI = new ScheduleUI(schedule, getInputtedPassengers());
-        scheduleUI.setBuyButtonAction(e -> {
-            onTicketBuy();
-        });
+        ScheduleUI scheduleUI = new ScheduleUI(schedule);
+
+
+        scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule));
 
         vBoxSchedule.getChildren().add(scheduleUI);
     }
