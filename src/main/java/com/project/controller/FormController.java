@@ -1,10 +1,10 @@
 package com.project.controller;
 
+import com.project.api.ScheduleMockApi;
 import com.project.dao.AirportDAO;
 import com.project.dao.PassengerDAO;
 import com.project.dao.ScheduleDAO;
 import com.project.dao.TicketDAO;
-import com.project.factory.ScheduleFactory;
 import com.project.model.Airport;
 import com.project.model.Passenger;
 import com.project.model.Schedule;
@@ -150,7 +150,7 @@ public class FormController {
 
     @FXML
     private void onSubmit() {
-        Schedule schedule = ScheduleFactory.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
+        Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
         ScheduleUI scheduleUI = new ScheduleUI(schedule);
 
 
