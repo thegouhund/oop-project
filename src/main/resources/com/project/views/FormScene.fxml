@@ -26,24 +26,24 @@
                     <HBox alignment="CENTER_LEFT" prefHeight="34.0" spacing="16.0">
                         <children>
                             <VBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="325.0">
-                        <children>
-                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
-                                  prefWidth="310.0" spacing="4.0">
                                 <children>
-                                    <ImageView fx:id="iconFrom" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
-                                               preserveRatio="true">
-                                        <image>
-                                            <Image url="@../img/airplane-takeoff.png"/>
-                                        </image>
-                                    </ImageView>
-                                    <MFXFilterComboBox fx:id="cbFrom" floatingText="Pilih Kota Asal"
-                                                       maxWidth="1.7976931348623157E308" prefHeight="42.0"
-                                                       prefWidth="205.0"/>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
+                                          prefWidth="310.0" spacing="4.0">
+                                        <children>
+                                            <ImageView fx:id="iconFrom" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                                                       preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/airplane-takeoff.png"/>
+                                                </image>
+                                            </ImageView>
+                                            <MFXFilterComboBox fx:id="cbFrom" floatingText="Pilih Kota Asal"
+                                                               maxWidth="1.7976931348623157E308" prefHeight="42.0"
+                                                               prefWidth="205.0"/>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="labelErrorMsgCbAirportFrom" prefHeight="18.0" prefWidth="247.0"
+                                           text="Pilih kota asal!" textFill="RED"/>
                                 </children>
-                            </HBox>
-                            <Label fx:id="labelErrorMsgCbAirportFrom" prefHeight="18.0" prefWidth="247.0"
-                                   text="Pilih kota asal!" textFill="RED"/>
-                        </children>
                             </VBox>
                             <VBox prefHeight="200.0" prefWidth="362.0">
                                 <children>
@@ -63,7 +63,7 @@
                                     </HBox>
                                     <Label fx:id="labelErrorMsgCbAirportDestination" prefHeight="18.0" prefWidth="247.0"
                                            text="Pilih kota tujuan!" textFill="RED"/>
-                        </children>
+                                </children>
                             </VBox>
                         </children>
                     </HBox>
