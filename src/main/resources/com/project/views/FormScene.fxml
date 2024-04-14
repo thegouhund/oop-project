@@ -23,10 +23,12 @@
                     <padding>
                         <Insets bottom="20.0" left="20.0" right="32.0" top="20.0"/>
                     </padding>
-                    <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="902.0" spacing="32.0">
+                    <HBox alignment="CENTER_LEFT" prefHeight="34.0" spacing="16.0">
                         <children>
-                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="29.0"
-                                  prefWidth="268.0" spacing="4.0">
+                            <VBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="325.0">
+                        <children>
+                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
+                                  prefWidth="310.0" spacing="4.0">
                                 <children>
                                     <ImageView fx:id="iconFrom" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
                                                preserveRatio="true">
@@ -34,30 +36,35 @@
                                             <Image url="@../img/airplane-takeoff.png"/>
                                         </image>
                                     </ImageView>
-                                    <Label text="Kota Asal"/>
+                                    <MFXFilterComboBox fx:id="cbFrom" floatingText="Pilih Kota Asal"
+                                                       maxWidth="1.7976931348623157E308" prefHeight="42.0"
+                                                       prefWidth="205.0"/>
                                 </children>
                             </HBox>
-                            <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
-                                  prefWidth="315.0" spacing="4.0">
-                                <children>
-                                    <ImageView fx:id="iconDestination" fitHeight="29.0" fitWidth="39.0"
-                                               pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../img/airplane-landing.png"/>
-                                        </image>
-                                    </ImageView>
-                                    <Label text="Kota Tujuan"/>
-                                </children>
-                            </HBox>
+                            <Label fx:id="labelErrorMsgCbAirportFrom" prefHeight="18.0" prefWidth="247.0"
+                                   text="Pilih kota asal!" textFill="RED"/>
                         </children>
-                    </HBox>
-                    <HBox prefHeight="40.0" spacing="32.0">
-                        <children>
-                            <MFXFilterComboBox fx:id="cbFrom" floatingText="Pilih Kota Asal"
-                                               maxWidth="1.7976931348623157E308" prefHeight="42.0" HBox.hgrow="ALWAYS"/>
-                            <MFXFilterComboBox fx:id="cbDestination" floatingText="Pilih Kota Tujuan"
-                                               maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="178.0"
-                                               HBox.hgrow="ALWAYS"/>
+                            </VBox>
+                            <VBox prefHeight="200.0" prefWidth="362.0">
+                                <children>
+                                    <HBox alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="100.0"
+                                          prefWidth="305.0" spacing="4.0">
+                                        <children>
+                                            <ImageView fx:id="iconDestination" fitHeight="41.0" fitWidth="30.0"
+                                                       pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/airplane-landing.png"/>
+                                                </image>
+                                            </ImageView>
+                                            <MFXFilterComboBox fx:id="cbDestination" floatingText="Pilih Kota Tujuan"
+                                                               maxWidth="1.7976931348623157E308" prefHeight="42.0"
+                                                               prefWidth="203.0"/>
+                                        </children>
+                                    </HBox>
+                                    <Label fx:id="labelErrorMsgCbAirportDestination" prefHeight="18.0" prefWidth="247.0"
+                                           text="Pilih kota tujuan!" textFill="RED"/>
+                        </children>
+                            </VBox>
                         </children>
                     </HBox>
                     <Label graphicTextGap="8.0" text="Tanggal Keberangkatan">
@@ -70,6 +77,8 @@
                         </graphic>
                     </Label>
                     <MFXDatePicker fx:id="datePickerDeparture" prefHeight="38.0" prefWidth="468.0"/>
+                    <Label fx:id="labelErrorMsgDatePicker" prefHeight="18.0" prefWidth="247.0"
+                           text="Pilih tanggal keberangkatan!" textFill="RED"/>
                     <Label graphicTextGap="8.0" text="Kelas Kursi">
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
@@ -84,13 +93,14 @@
                     <VBox fx:id="vboxPassengerField" prefHeight="47.0" prefWidth="467.0" spacing="16.0"/>
                     <MFXButton minHeight="38.0" minWidth="174.0" onAction="#onClickAddPassenger" prefHeight="38.0"
                                prefWidth="174.0" style="-fx-background-color: white;" text="Tambah Penumpang"/>
-                    <MFXButton depthLevel="LEVEL5" onAction="#onSubmit" prefHeight="34.0" prefWidth="467.0"
+                    <MFXButton depthLevel="LEVEL5" onAction="#onTicketSearch" prefHeight="34.0" prefWidth="467.0"
                                rippleColor="#5659ff" style="-fx-background-color: #178CF4; -fx-text-fill: white;"
                                text="Cari Tiket" textFill="WHITE">
                         <font>
                             <Font name="System Bold" size="16.0"/>
                         </font>
                     </MFXButton>
+                    <Label fx:id="labelErrorMsg" prefHeight="18.0" prefWidth="288.0" textFill="RED"/>
                 </VBox>
             </content>
         </MFXScrollPane>

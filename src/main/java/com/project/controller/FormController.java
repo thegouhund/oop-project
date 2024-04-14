@@ -11,21 +11,22 @@ import com.project.model.Schedule;
 import com.project.components.ScheduleUI;
 import com.project.model.Ticket;
 import com.project.utils.DatabaseUtils;
-import io.github.palexdev.materialfx.controls.MFXComboBox;
-import io.github.palexdev.materialfx.controls.MFXDatePicker;
-import io.github.palexdev.materialfx.controls.MFXFilterComboBox;
-import io.github.palexdev.materialfx.controls.MFXTextField;
-import javafx.collections.FXCollections;
+import io.github.palexdev.materialfx.controls.*;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
+import javax.swing.text.LabelView;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.EventObject;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
@@ -33,31 +34,30 @@ public class FormController {
     @FXML
     private VBox vboxMain;
     @FXML
-    private TextField fieldName;
-    @FXML
     private MFXFilterComboBox<Airport> cbFrom;
     @FXML
     private MFXFilterComboBox<Airport> cbDestination;
     @FXML
     private MFXDatePicker datePickerDeparture;
     @FXML
-    private ImageView iconFrom;
-    @FXML
-    private ImageView iconDestination;
-    @FXML
     private VBox vboxPassengerField;
     @FXML
     private MFXComboBox<String> choiceSeat;
     @FXML
     private VBox vBoxSchedule;
+    @FXML
+    private Label labelErrorMsgCbAirportFrom;
+    @FXML
+    private Label labelErrorMsgCbAirportDestination;
+    @FXML
+    private Label labelErrorMsgDatePicker;
 
     Connection connection = DatabaseUtils.getConnection();
 
     @FXML
     private void initialize() {
-
         AirportDAO airportDao = new AirportDAO(connection);
-        ObservableList<Airport> airportChoices = FXCollections.observableArrayList(airportDao.getAll());
+        ObservableList<Airport> airportChoices = observableArrayList(airportDao.getAll());
         cbFrom.setItems(airportChoices);
         cbDestination.setItems(airportChoices);
 
@@ -66,51 +66,11 @@ public class FormController {
         choiceSeat.setItems(seats);
 
         onClickAddPassenger();
+
+        labelErrorMsgCbAirportFrom.setVisible(false);
+        labelErrorMsgCbAirportDestination.setVisible(false);
+        labelErrorMsgDatePicker.setVisible(false);
     }
-
-//    private ObservableList<Airport> getAirportsChoice() {
-//
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        JsonNode json = null;
-//        try {
-//            json = objectMapper.readTree(new File("src/main/resources/com/project/api/airports.json"));
-//            ObservableList<Airport> options = observableArrayList();
-//            for (int i = 0; i < json.size(); i++) {
-//                String city = String.valueOf(json.get(i).get("city")).replace("\"", "");
-//                String iata = String.valueOf(json.get(i).get("iata")).replace("\"", "");
-//
-//                Airport airport = new Airport(iata, city);
-//
-//                options.add(airport);
-//            }
-//
-//            return options;
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
-
-    @FXML
-    private void onClickAddPassenger() {
-        int passengerAmount = getPassengerAmount();
-
-        HBox hbox = new HBox();
-        MFXTextField nameField = new MFXTextField();
-
-        MFXTextField ageField = new MFXTextField();
-
-        nameField.setFloatingText("Nama penumpang " + passengerAmount);
-        nameField.setMinWidth(200);
-        ageField.setFloatingText("Usia penumpang " + passengerAmount);
-        ageField.setMinWidth(200);
-
-        hbox.setSpacing(16);
-        hbox.setMinWidth(400);
-        hbox.getChildren().addAll(nameField, ageField);
-        vboxPassengerField.getChildren().add(hbox);
-    }
-
 
     private int getPassengerAmount() {
         int counter = 1;
@@ -133,6 +93,27 @@ public class FormController {
         return passengers;
     }
 
+    @FXML
+    private void onClickAddPassenger() {
+        int passengerAmount = getPassengerAmount();
+
+        HBox hbox = new HBox();
+        MFXTextField nameField = new MFXTextField();
+        MFXTextField ageField = new MFXTextField();
+        nameField.setFloatingText("Nama penumpang " + passengerAmount);
+//        Label labelErrorMsgNameField = new Label("Masukkan nama penumpang!");
+//        hbox.getChildren().add(labelErrorMsgNameField);
+//        labelErrorMsgNameField.setVisible(false);
+        nameField.setMinWidth(200);
+        ageField.setFloatingText("Usia penumpang " + passengerAmount);
+        ageField.setMinWidth(200);
+
+        hbox.setSpacing(16);
+        hbox.setMinWidth(400);
+        hbox.getChildren().addAll(nameField, ageField);
+        vboxPassengerField.getChildren().add(hbox);
+    }
+
     private void onTicketBuy(Schedule schedule) {
         PassengerDAO passengerDAO = new PassengerDAO(connection);
         ScheduleDAO scheduleDAO = new ScheduleDAO(connection);
@@ -149,13 +130,60 @@ public class FormController {
     }
 
     @FXML
-    private void onSubmit() {
-        Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
-        ScheduleUI scheduleUI = new ScheduleUI(schedule);
+    private void onTicketSearch(ActionEvent event) {
+        if (isFormValid()) {
+            Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
+            ScheduleUI scheduleUI = new ScheduleUI(schedule);
+            scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule));
 
+            vBoxSchedule.getChildren().add(scheduleUI);
+        }
+    }
 
-        scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule));
+    @FXML
+    private boolean isFormValid() {
+        int checks = 0;
+        if (cbFrom.getValue() == null) {
+            cbFrom.setStyle("-fx-border-color: red;-mfx-color: red;");
+            labelErrorMsgCbAirportFrom.setVisible(true);
+        } else {
+            checks++;
+        }
+        if (cbDestination.getValue() == null) {
+            cbDestination.setStyle("-fx-border-color: red;-mfx-color: red;");
+            labelErrorMsgCbAirportDestination.setVisible(true);
+        } else {
+            checks++;
+        }
+        if (datePickerDeparture.getValue() == null) {
+            datePickerDeparture.setStyle("-fx-border-color: red;-mfx-color: red;");
+            labelErrorMsgDatePicker.setVisible(true);
+        } else {
+            checks++;
+        }
 
-        vBoxSchedule.getChildren().add(scheduleUI);
+        int loopCounter = 0;
+        for (Node node : vboxPassengerField.getChildren()) {
+            HBox hbox = (HBox) node;
+            MFXTextField nameField = (MFXTextField) hbox.getChildren().getFirst();
+            MFXTextField ageField = (MFXTextField) hbox.getChildren().getLast();
+            if (nameField.getText().isEmpty()) {
+                nameField.setStyle("-fx-border-color: red;-mfx-color: red;");
+            } else {
+                checks++;
+            }
+
+            if (ageField.getText().isEmpty()) {
+                ageField.setStyle("-fx-border-color: red;-mfx-color: red;");
+            } else {
+                checks++;
+            }
+
+            loopCounter += 2;
+        }
+
+        System.out.println(checks);
+        System.out.println(3 + loopCounter);
+        return checks == 3 + loopCounter;
     }
 }
