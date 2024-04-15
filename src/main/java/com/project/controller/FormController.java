@@ -17,6 +17,7 @@ import io.github.palexdev.mfxresources.fonts.MFXIconWrapper;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -99,8 +100,8 @@ public class FormController {
         ArrayList<Passenger> passengers = new ArrayList<>();
         for (Node node : vboxPassengerField.getChildren()) {
             HBox hbox = (HBox) node;
-            MFXTextField nameField = (MFXTextField) hbox.getChildren().getFirst();
-            MFXTextField ageField = (MFXTextField) hbox.getChildren().getLast();
+            MFXTextField nameField = (MFXTextField) hbox.getChildren().get(0);
+            MFXTextField ageField = (MFXTextField) hbox.getChildren().get(1);
             passengers.add(new Passenger(nameField.getText(), Integer.parseInt(ageField.getText())));
         }
         return passengers;
@@ -113,14 +114,20 @@ public class FormController {
         HBox hbox = new HBox();
         MFXTextField nameField = new MFXTextField();
         MFXTextField ageField = new MFXTextField();
+        MFXButton deleteButton = new MFXButton("×");
         nameField.setFloatingText("Nama penumpang " + passengerAmount);
         nameField.setMinWidth(200);
         ageField.setFloatingText("Usia penumpang " + passengerAmount);
         ageField.setMinWidth(200);
 
+        deleteButton.setOnAction(e -> {
+            vboxPassengerField.getChildren().remove(hbox);
+        });
+
+        hbox.setAlignment(Pos.CENTER_LEFT);
         hbox.setSpacing(16);
         hbox.setMinWidth(400);
-        hbox.getChildren().addAll(nameField, ageField);
+        hbox.getChildren().addAll(nameField, ageField, deleteButton);
         vboxPassengerField.getChildren().add(hbox);
     }
 
@@ -142,8 +149,10 @@ public class FormController {
     @FXML
     private void onTicketSearch(ActionEvent event) {
         if (isFormValid()) {
+            vBoxSchedule.getChildren().clear();
+            vBoxSchedule.getChildren().add(labelTiketPenerbangan);
             for (int i = 0; i < 10; i++) {
-                Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString());
+                Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString(), getInputtedPassengers().size());
                 ScheduleUI scheduleUI = new ScheduleUI(schedule);
                 scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule));
 
@@ -177,15 +186,15 @@ public class FormController {
         int loopCounter = 0;
         for (Node node : vboxPassengerField.getChildren()) {
             HBox hbox = (HBox) node;
-            MFXTextField nameField = (MFXTextField) hbox.getChildren().getFirst();
-            MFXTextField ageField = (MFXTextField) hbox.getChildren().getLast();
+            MFXTextField nameField = (MFXTextField) hbox.getChildren().get(0);
+            MFXTextField ageField = (MFXTextField) hbox.getChildren().get(1);
             if (nameField.getText().isEmpty()) {
                 nameField.setStyle("-fx-border-color: red;-mfx-color: red;");
             } else {
                 checks++;
             }
 
-            if (ageField.getText().isEmpty()) {
+            if (ageField.getText().isEmpty() || !ageField.getText().matches("\\d+")) { // is empty or is not a number
                 ageField.setStyle("-fx-border-color: red;-mfx-color: red;");
             } else {
                 checks++;
@@ -194,7 +203,7 @@ public class FormController {
             loopCounter += 2;
         }
 
-        if (checks == 3 + loopCounter) {
+        if (checks == 3 + loopCounter && loopCounter != 0) {
             cbFrom.setStyle("");
             labelErrorMsgCbAirportFrom.setVisible(false);
 
@@ -206,8 +215,8 @@ public class FormController {
 
             for (Node node : vboxPassengerField.getChildren()) {
                 HBox hbox = (HBox) node;
-                MFXTextField nameField = (MFXTextField) hbox.getChildren().getFirst();
-                MFXTextField ageField = (MFXTextField) hbox.getChildren().getLast();
+                MFXTextField nameField = (MFXTextField) hbox.getChildren().get(0);
+                MFXTextField ageField = (MFXTextField) hbox.getChildren().get(1);
                 nameField.setStyle("");
                 ageField.setStyle("");
             }

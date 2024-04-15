@@ -14,6 +14,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+
 import java.io.File;
 import java.text.DecimalFormat;
 
@@ -66,7 +67,7 @@ public class ScheduleUI extends HBox {
     private void setupIata(Schedule schedule) {
         Label iata = new Label(schedule.getAirportFrom().getIata() + " - " + schedule.getAirportDestination().getIata());
         iata.setFont(new Font(18));
-        iata.setPrefWidth(147);
+        iata.setPrefWidth(100);
         this.getChildren().add(iata);
     }
 

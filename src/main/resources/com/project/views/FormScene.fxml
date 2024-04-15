@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.FormController">
+<HBox minHeight="-Infinity" prefHeight="621.0" prefWidth="1270.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.FormController">
     <children>
-        <MFXScrollPane hbarPolicy="NEVER">
+        <MFXScrollPane hbarPolicy="NEVER" style="-fx-background-color: #f6f6f6;">
             <content>
                 <VBox fx:id="vboxMain" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="624.0" prefWidth="519.0" spacing="16.0">
                     <padding>
@@ -63,7 +63,7 @@
                      <MFXIconWrapper fx:id="iconCbSeatChoice" />
                   </graphic>
                     </Label>
-                    <MFXComboBox fx:id="choiceSeat" floatingText="Pilih kelas" prefHeight="42.0" prefWidth="166.0" value="Any" />
+                    <MFXComboBox fx:id="choiceSeat" floatingText="Pilih kelas" prefHeight="46.0" prefWidth="166.0" value="Any" />
                     <VBox fx:id="vboxPassengerField" prefHeight="27.0" prefWidth="467.0" spacing="16.0" />
                     <MFXButton minHeight="38.0" minWidth="174.0" onAction="#onClickAddPassenger" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: white;" text="Tambah Penumpang" />
                     <MFXButton depthLevel="LEVEL5" onAction="#onTicketSearch" prefHeight="34.0" prefWidth="467.0" rippleColor="#5659ff" style="-fx-background-color: #178CF4; -fx-text-fill: white;" text="Cari Tiket" textFill="WHITE">
@@ -75,10 +75,10 @@
                 </VBox>
             </content>
         </MFXScrollPane>
-      <Separator orientation="VERTICAL" prefHeight="200.0" />
-        <MFXScrollPane hbarPolicy="NEVER">
+      <Separator orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: f6f6f6;" />
+        <MFXScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="0.0" prefHeight="621.0" prefWidth="746.0" style="-fx-background-color: #f6f6f6;" HBox.hgrow="NEVER">
             <content>
-                <VBox fx:id="vBoxSchedule" prefHeight="585.0" prefWidth="750.0" spacing="16.0">
+                <VBox fx:id="vBoxSchedule" fillWidth="false" prefHeight="585.0" prefWidth="706.0" spacing="16.0" style="-fx-background-color: #f6f6f6;">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -94,6 +94,12 @@
                </children>
                 </VBox>
             </content>
+         <padding>
+            <Insets bottom="16.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
         </MFXScrollPane>
     </children>
 </HBox>

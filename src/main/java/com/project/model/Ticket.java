@@ -13,6 +13,7 @@ public class Ticket {
 
     public Ticket(Schedule schedule) {
         this.schedule = schedule;
+        this.schedule.setPrice(this.schedule.getPrice() * this.passengers.size());
     }
 
     public ArrayList<Passenger> getPassengers() {
