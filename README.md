@@ -1,4 +1,4 @@
-
+[![Java CI with Gradle](https://github.com/thegouhund/oop-project/actions/workflows/gradle.yml/badge.svg)](https://github.com/thegouhund/oop-project/actions/workflows/gradle.yml)
 
 # Online Plane Ticket Booking App
 ## Overview
@@ -33,5 +33,5 @@ designed to facilitate the online booking of plane tickets.
      gradle run
     ```
 
-   [![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white)](https://openjfx.io/)
-   [![JavaFX](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)](https://gradle.org/)
+[![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white)](https://openjfx.io/)
+[![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)](https://gradle.org/)
