@@ -1,20 +1,11 @@
 package com.project.model;
 
-public class Passenger {
-    private String name;
+public class Passenger extends Entity{
     private int age;
 
     public Passenger(String name, int age) {
-        this.name = name;
+        super(name);
         this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
@@ -28,7 +19,7 @@ public class Passenger {
     @Override
     public String toString() {
         return "Passenger{" +
-                "name='" + name + '\'' +
+                "name='" + super.getName() + '\'' +
                 ", age='" + age + '\'' +
                 '}';
     }

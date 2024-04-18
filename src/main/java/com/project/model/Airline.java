@@ -1,20 +1,12 @@
 package com.project.model;
 
-public class Airline {
-    private String name;
+public class Airline extends Entity{
+
     private double priceMultiplier = 1;
 
     public Airline(String name, double priceMultiplier) {
-        this.name = name;
+        super(name);
         this.priceMultiplier = priceMultiplier;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public double getPriceMultiplier() {
@@ -28,7 +20,7 @@ public class Airline {
     @Override
     public String toString() {
         return "Airline{" +
-                "name='" + name + '\'' +
+                "name='" + super.getName() + '\'' +
                 ", priceMultiplier=" + priceMultiplier +
                 '}';
     }
