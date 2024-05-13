@@ -55,7 +55,6 @@ public class AirlineDAO extends DAO<Airline> {
             if (result.next()) {
                 return result.getInt("id");
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

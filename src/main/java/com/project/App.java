@@ -24,6 +24,7 @@ public class App extends Application {
                 .setGlobal();
 
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle("Form Pemesanan");
         stage.setScene(scene);
         stage.show();

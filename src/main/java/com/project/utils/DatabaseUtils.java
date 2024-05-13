@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DatabaseUtils {
     public static Connection getConnection() {
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/airplane_ticket", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/db_ticket", "root", "");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
