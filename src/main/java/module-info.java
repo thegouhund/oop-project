@@ -1,4 +1,4 @@
-module com.tubes {
+module com.project {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -17,4 +17,6 @@ module com.tubes {
     opens com.project.controller to javafx.fxml;
     exports com.project.utils;
     opens com.project.utils to javafx.fxml;
+    exports com.project.controller.dashboard;
+    opens com.project.controller.dashboard to javafx.fxml;
 }

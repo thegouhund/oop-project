@@ -46,8 +46,8 @@ public class ScheduleUI extends HBox {
 
         Image imgLogo = new Image(file.toURI().toString());
         imgViewLogo.setImage(imgLogo);
-        imgViewLogo.setFitHeight(50);
-        imgViewLogo.setFitWidth(50);
+        imgViewLogo.setFitHeight(35);
+        imgViewLogo.setFitWidth(100);
         this.getChildren().add(imgViewLogo);
     }
 

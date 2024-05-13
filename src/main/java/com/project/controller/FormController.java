@@ -127,7 +127,13 @@ public class FormController {
         hbox.setAlignment(Pos.CENTER_LEFT);
         hbox.setSpacing(16);
         hbox.setMinWidth(400);
-        hbox.getChildren().addAll(nameField, ageField, deleteButton);
+
+        if (vboxPassengerField.getChildren().isEmpty()) {
+            hbox.getChildren().addAll(nameField, ageField);
+        } else{
+            hbox.getChildren().addAll(nameField, ageField, deleteButton);
+
+        }
         vboxPassengerField.getChildren().add(hbox);
     }
 
