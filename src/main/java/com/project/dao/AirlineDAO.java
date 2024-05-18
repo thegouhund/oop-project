@@ -16,12 +16,16 @@ public class AirlineDAO extends DAO<Airline> {
 
     @Override
     public Airline getById(int id) {
+        Airline airline;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline WHERE id = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                return new Airline(result.getString("name"), 1);
+                airline = new Airline(result.getString("name"));
+                airline.setId(result.getInt("id"));
+
+                return airline;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -37,7 +41,8 @@ public class AirlineDAO extends DAO<Airline> {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
-                airline = new Airline(result.getString("name"), 1);
+                airline = new Airline(result.getString("name"));
+                airline.setId(result.getInt("id"));
                 airlineList.add(airline);
             }
             return airlineList;
@@ -46,27 +51,13 @@ public class AirlineDAO extends DAO<Airline> {
         }
     }
 
-    public int getIdByName(String name) {
-        try {
-            name = name.replace("\"", "");
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline WHERE name = ?");
-            statement.setString(1, name);
-            ResultSet result = statement.executeQuery();
-            if (result.next()) {
-                return result.getInt("id");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return 0;
-    }
-
     @Override
     public void update(Airline airline, int id) {
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE airline SET name = ? WHERE id = ?");
             statement.setString(1, airline.getName());
             statement.setInt(2, id);
+            System.out.println(statement);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -87,7 +78,14 @@ public class AirlineDAO extends DAO<Airline> {
 
     @Override
     public void add(Airline airline) {
-        // Implement the logic to add a new Airline
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO airline (name) VALUES (?)");
+            statement.setString(1, airline.getName());
+            statement.executeUpdate();
+            System.out.println(statement);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

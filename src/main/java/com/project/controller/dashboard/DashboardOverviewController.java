@@ -1,4 +1,6 @@
 package com.project.controller.dashboard;
 
-public class DashboardOverviewController {
+import com.project.controller.Controller;
+
+public class DashboardOverviewController extends Controller {
 }

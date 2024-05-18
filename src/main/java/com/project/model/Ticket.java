@@ -2,7 +2,8 @@ package com.project.model;
 
 import java.util.ArrayList;
 
-public class Ticket {
+public class Ticket implements DatabaseEntity {
+    private int id;
     private ArrayList<Passenger> passengers = new ArrayList<>();
     private Schedule schedule;
 
@@ -30,5 +31,15 @@ public class Ticket {
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 }

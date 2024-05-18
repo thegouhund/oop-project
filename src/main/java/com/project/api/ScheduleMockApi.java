@@ -23,6 +23,6 @@ public class ScheduleMockApi {
 
         // randomize price
         double price = RandomUtils.random().nextDouble(1000000, 3000000);
-        return new Schedule(airline, airportFrom, airportDestination, departure, departure.plusHours(3), price * airline.getPriceMultiplier() * passengerAmount);
+        return new Schedule(airline, airportFrom, airportDestination, departure, departure.plusHours(3), price * 1 * passengerAmount);
     }
 }

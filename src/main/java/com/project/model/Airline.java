@@ -1,26 +1,12 @@
 package com.project.model;
 
-public class Airline extends Entity {
+public class Airline extends Entity implements DatabaseEntity {
     private String airlineCode;
-    private double priceMultiplier = 1;
-
-    public Airline(String name, double priceMultiplier) {
-        super(name);
-        this.airlineCode = "";
-        this.priceMultiplier = priceMultiplier;
-    }
+    private int id;
 
     public Airline(String name) {
         super(name);
         this.airlineCode = "";
-    }
-
-    public double getPriceMultiplier() {
-        return priceMultiplier;
-    }
-
-    public void setPriceMultiplier(double priceMultiplier) {
-        this.priceMultiplier = priceMultiplier;
     }
 
     public String getAirlineCode() {
@@ -32,10 +18,17 @@ public class Airline extends Entity {
     }
 
     @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
     public String toString() {
-        return "Airline{" +
-                "name='" + super.getName() + '\'' +
-                ", priceMultiplier=" + priceMultiplier +
-                '}';
+        return "Airline{" + "name='" + super.getName() + "}";
     }
 }

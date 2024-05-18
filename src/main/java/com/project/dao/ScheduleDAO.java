@@ -43,6 +43,7 @@ public class ScheduleDAO extends DAO<Schedule> {
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 schedule = new Schedule();
+                schedule.setId(result.getInt("id"));
                 schedule.setAirline(airlineDAO.getById(result.getInt("airline_id")));
                 schedule.setAirportFrom(airportDAO.getById(result.getInt("airport_arrival_id")));
                 schedule.setAirportDestination(airportDAO.getById(result.getInt("airport_departure_id")));
@@ -56,31 +57,6 @@ public class ScheduleDAO extends DAO<Schedule> {
             throw new RuntimeException(e);
         }
     }
-
-    public int getIdByObject(Schedule schedule) {
-//      airline_id, airport_arrival_id, and airport_departure_id combined are unique for each row
-        PreparedStatement selectStatement;
-        try {
-            selectStatement = connection.prepareStatement("SELECT id FROM schedule WHERE airline_id = ? AND airport_arrival_id = ? AND airport_departure_id = ?");
-            selectStatement.setInt(1, airlineDAO.getIdByName(schedule.getAirline().getName()));
-            selectStatement.setInt(2, airportDAO.getIdByIata(schedule.getAirportFrom().getIata()));
-            selectStatement.setInt(3, airportDAO.getIdByIata(schedule.getAirportDestination().getIata()));
-            System.out.println(selectStatement);
-            ResultSet resultSet = selectStatement.executeQuery();
-            if (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                if (id != 0) {
-                    return id;
-                } else {
-                    throw new SQLException("No Schedule Found with " + schedule);
-                }
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return 0;
-    }
-
 
     @Override
     public void update(Schedule schedule, int id) {
@@ -110,14 +86,38 @@ public class ScheduleDAO extends DAO<Schedule> {
     public void add(Schedule schedule) {
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO schedule (airline_id, airport_arrival_id, airport_departure_id, arrival_time, departure_time, price) VALUES (?, ?, ?, ?, ?, ?)");
-            statement.setInt(1, airlineDAO.getIdByName(schedule.getAirline().getName()));
-            statement.setInt(2, airportDAO.getIdByIata(schedule.getAirportFrom().getIata()));
-            statement.setInt(3, airportDAO.getIdByIata(schedule.getAirportDestination().getIata()));
+            statement.setInt(1, schedule.getAirline().getId());
+            statement.setInt(2, schedule.getAirportFrom().getId());
+            statement.setInt(3, schedule.getAirportDestination().getId());
             statement.setString(4, TimeUtils.localDateTimeToStr(schedule.getArrivalTime()));
             statement.setString(5, TimeUtils.localDateTimeToStr(schedule.getDepartureTime()));
             statement.setDouble(6, schedule.getPrice());
             statement.executeUpdate();
             System.out.println(statement);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public int addAndGetGeneratedId(Schedule schedule, Double price) { // price set to 0 for unknown reason (use this param for temp) TODO
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO schedule (airline_id, airport_arrival_id, airport_departure_id, arrival_time, departure_time, price) VALUES (?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, schedule.getAirline().getId());
+            statement.setInt(2, schedule.getAirportFrom().getId());
+            statement.setInt(3, schedule.getAirportDestination().getId());
+            statement.setString(4, TimeUtils.localDateTimeToStr(schedule.getArrivalTime()));
+            statement.setString(5, TimeUtils.localDateTimeToStr(schedule.getDepartureTime()));
+            statement.setDouble(6, price);
+            System.out.println(statement);
+            statement.executeUpdate();
+
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Failed to retrieve auto-generated ID.");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

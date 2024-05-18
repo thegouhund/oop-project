@@ -1,5 +1,8 @@
 package com.project.controller.dashboard;
 
+import com.project.controller.Controller;
+import com.project.controller.dashboard.airline.DashboardAirlineController;
+import com.project.controller.dashboard.router.Router;
 import com.project.model.Airline;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
@@ -21,7 +24,7 @@ import java.net.URL;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable {
+public class DashboardController extends Controller implements Initializable {
 
     @FXML
     private VBox pnItems = null;
@@ -47,11 +50,13 @@ public class DashboardController implements Initializable {
     private Pane pnlOverview;
     @FXML
     private Pane pnlMenus;
+    private Router router;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         openOverviewPane();
+        router = Router.getInstance(stackPaneMain);
     }
 
 
@@ -65,34 +70,34 @@ public class DashboardController implements Initializable {
             pnlMenus.toFront();
         }
         if (actionEvent.getSource() == btnOverview) {
-            System.out.println("Overview clicked!");
-            openOverviewPane();
+            router.navigate("DashboardOverview.fxml");
         }
         if (actionEvent.getSource() == btnAirlines) {
-            openAirlinePane();
-        }
-
-    }
-
-    private void openAirlinePane() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/DashboardAirline.fxml"));
-            Parent root = loader.load();
-            stackPaneMain.getChildren().clear();
-            stackPaneMain.getChildren().add(root);
-            System.out.println(stackPaneMain.getChildren().size());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            DashboardAirlineController controller = (DashboardAirlineController) router.navigate("DashboardAirline.fxml");
+            controller.setStackPane(stackPaneMain);
         }
     }
+
+//    private void openAirlinePane() {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/DashboardAirline.fxml"));
+//            Parent root = loader.load();
+//            DashboardAirlineController controller = loader.getController();
+//            controller.initData(stackPaneMain);
+//            stackPaneMain.getChildren().clear();
+//            stackPaneMain.getChildren().add(root);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     private void openOverviewPane() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/DashboardOverview.fxml"));
             Parent root = loader.load();
+
             stackPaneMain.getChildren().clear();
             stackPaneMain.getChildren().add(root);
-            System.out.println(stackPaneMain.getChildren().size());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

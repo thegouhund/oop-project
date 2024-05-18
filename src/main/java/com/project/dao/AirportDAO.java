@@ -16,12 +16,16 @@ public class AirportDAO extends DAO<Airport> {
 
     @Override
     public Airport getById(int id) {
+        Airport airport;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airport WHERE id = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                return new Airport(result.getString("iata"), result.getString("city"));
+                airport = new Airport(result.getString("iata"), result.getString("city"));
+                airport.setId(result.getInt("id"));
+
+                return airport;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -38,26 +42,13 @@ public class AirportDAO extends DAO<Airport> {
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 airport = new Airport(result.getString("iata"), result.getString("city"));
+                airport.setId(result.getInt("id"));
                 airportList.add(airport);
             }
             return airportList;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public int getIdByIata(String iata) {
-        try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM airport WHERE iata = ?");
-            statement.setString(1, iata);
-            ResultSet result = statement.executeQuery();
-            if (result.next()) {
-                return result.getInt("id");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return 0;
     }
 
     @Override

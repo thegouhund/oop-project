@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
-public class FormController {
+public class FormController extends Controller {
     @FXML
     private VBox vboxMain;
     @FXML
@@ -130,26 +130,11 @@ public class FormController {
 
         if (vboxPassengerField.getChildren().isEmpty()) {
             hbox.getChildren().addAll(nameField, ageField);
-        } else{
+        } else {
             hbox.getChildren().addAll(nameField, ageField, deleteButton);
 
         }
         vboxPassengerField.getChildren().add(hbox);
-    }
-
-    private void onTicketBuy(Schedule schedule) {
-        PassengerDAO passengerDAO = new PassengerDAO(connection);
-        ScheduleDAO scheduleDAO = new ScheduleDAO(connection);
-        TicketDAO ticketDAO = new TicketDAO(connection);
-
-        Ticket ticket = new Ticket(schedule);
-        for (Passenger passenger : getInputtedPassengers()) {
-            passengerDAO.add(passenger);
-            ticket.getPassengers().add(passenger);
-        }
-
-        scheduleDAO.add(schedule);
-        ticketDAO.add(ticket, schedule);
     }
 
     @FXML
@@ -160,11 +145,27 @@ public class FormController {
             for (int i = 0; i < 10; i++) {
                 Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString(), getInputtedPassengers().size());
                 ScheduleUI scheduleUI = new ScheduleUI(schedule);
-                scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule));
+                scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule, schedule.getPrice()));
 
                 vBoxSchedule.getChildren().add(scheduleUI);
             }
         }
+    }
+
+    private void onTicketBuy(Schedule schedule, double price) {
+        PassengerDAO passengerDAO = new PassengerDAO(connection);
+        ScheduleDAO scheduleDAO = new ScheduleDAO(connection);
+        TicketDAO ticketDAO = new TicketDAO(connection);
+
+        Ticket ticket = new Ticket(schedule);
+        for (Passenger passenger : getInputtedPassengers()) {
+            int passengerId = passengerDAO.addAndGetGeneratedId(passenger);
+            passenger.setId(passengerId);
+            ticket.getPassengers().add(passenger);
+        }
+        int scheduleId = scheduleDAO.addAndGetGeneratedId(schedule, price);
+        schedule.setId(scheduleId);
+        ticketDAO.add(ticket, schedule);
     }
 
     @FXML

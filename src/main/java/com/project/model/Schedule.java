@@ -3,7 +3,8 @@ package com.project.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Schedule {
+public class Schedule implements DatabaseEntity {
+    private int id;
     private Airline airline;
     private double price;
     private Airport airportFrom;
@@ -14,11 +15,11 @@ public class Schedule {
 
     public Schedule(Airline airline, Airport airportFrom, Airport airportDestination, LocalDateTime departureTime, LocalDateTime arrivalTime, double price) {
         this.airline = airline;
-        this.price = price * airline.getPriceMultiplier();
         this.airportFrom = airportFrom;
         this.airportDestination = airportDestination;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
+        this.price = price;
     }
 
     public Schedule() {
@@ -49,7 +50,7 @@ public class Schedule {
     }
 
     public Double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {
@@ -73,12 +74,17 @@ public class Schedule {
     }
 
     @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
     public String toString() {
-        return "Schedule{" +
-                "airline=" + airline +
-                ", price=" + price +
-                ", departureTime=" + departureTime +
-                ", arrivalTime=" + arrivalTime +
-                '}';
+        return "Schedule{" + "airline=" + airline + ", price=" + price + ", departureTime=" + departureTime + ", arrivalTime=" + arrivalTime + '}';
     }
 }

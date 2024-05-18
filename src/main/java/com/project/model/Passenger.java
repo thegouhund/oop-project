@@ -1,6 +1,7 @@
 package com.project.model;
 
-public class Passenger extends Entity{
+public class Passenger extends Entity implements DatabaseEntity{
+    private int id;
     private int age;
 
     public Passenger(String name, int age) {
@@ -14,6 +15,16 @@ public class Passenger extends Entity{
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

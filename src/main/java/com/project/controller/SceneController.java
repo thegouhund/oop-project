@@ -1,6 +1,7 @@
 package com.project.controller;
 
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SceneController {
+public class SceneController extends Controller {
 
     private Stage stage;
     private Scene scene;

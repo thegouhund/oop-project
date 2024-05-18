@@ -6,6 +6,7 @@ import com.project.model.Ticket;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -79,10 +80,10 @@ public class TicketDAO extends DAO<Ticket> {
         try {
             for (Passenger passenger : ticket.getPassengers()) {
                 PreparedStatement statement = connection.prepareStatement("INSERT INTO ticket (passenger_id, schedule_id) VALUES (?, ?)");
-                statement.setInt(1, passengerDAO.getIdByName(passenger.getName()));
-                statement.setInt(2, scheduleDAO.getIdByObject(schedule));
-                statement.executeUpdate();
+                statement.setInt(1, passenger.getId());
+                statement.setInt(2, schedule.getId());
                 System.out.println(statement);
+                statement.executeUpdate();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

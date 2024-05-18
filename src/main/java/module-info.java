@@ -9,14 +9,21 @@ module com.project {
     requires com.fasterxml.jackson.databind;
     requires MaterialFX;
     requires java.sql;
+    requires java.xml.crypto;
 //    requires io.github.palexdev.materialfx;
 
     opens com.project to javafx.fxml;
     exports com.project;
     exports com.project.controller;
+    opens com.project.model to javafx.fxml;
+    exports com.project.model;
     opens com.project.controller to javafx.fxml;
     exports com.project.utils;
     opens com.project.utils to javafx.fxml;
     exports com.project.controller.dashboard;
     opens com.project.controller.dashboard to javafx.fxml;
+    opens com.project.controller.dashboard.router to javafx.fxml;
+    exports com.project.controller.dashboard.router;
+    opens com.project.controller.dashboard.airline to javafx.fxml;
+    exports com.project.controller.dashboard.airline;
 }

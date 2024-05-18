@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -8,16 +9,16 @@
 
 <Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="57.0" layoutY="25.0" text="Overview">
+      <Label layoutX="66.0" layoutY="79.0" text="Overview">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="72.0" prefHeight="92.0" prefWidth="661.0" spacing="50.0">
+      <HBox alignment="CENTER_LEFT" layoutX="66.0" layoutY="127.0" prefHeight="92.0" prefWidth="661.0" spacing="50.0">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="112.0" style="-fx-background-color: #111; -fx-border-radius: 6px; -fx-background-radius: 6px;">
                <children>
-                  <Label text="22000" textFill="#2a73ff">
+                  <Label fx:id="labelTicketTotal" text="22000" textFill="#2a73ff">
                      <font>
                         <Font name="System Bold" size="26.0" />
                      </font>
@@ -27,7 +28,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="92.0" prefWidth="119.0" style="-fx-background-color: #111; -fx-background-radius: 6px;">
                <children>
-                  <Label text="1500" textFill="#26bfbc">
+                  <Label fx:id="labelAirlineTotal" text="1500" textFill="#26bfbc">
                      <font>
                         <Font name="System Bold" size="26.0" />
                      </font>
@@ -37,7 +38,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="92.0" prefWidth="130.0" style="-fx-background-color: #111; -fx-background-radius: 6px;">
                <children>
-                  <Label text="1000" textFill="#fa5f7e">
+                  <Label fx:id="labelAirportTotal" text="1000" textFill="#fa5f7e">
                      <font>
                         <Font name="System Bold" size="26.0" />
                      </font>
@@ -55,6 +56,13 @@
                   <Label text="Orders on Hold" textFill="#e7e5e5" />
                </children>
             </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="66.0" layoutY="29.0" prefHeight="44.0" prefWidth="202.0">
+         <children>
+            <MFXButton text="Dashboard" textFill="#b2b2b2" />
+            <Label text="/" />
+            <MFXButton text="Overview" textFill="#b2b2b2" />
          </children>
       </HBox>
    </children>

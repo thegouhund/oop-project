@@ -1,6 +1,7 @@
 package com.project.model;
 
-public class Airport {
+public class Airport implements DatabaseEntity{
+    private int id;
     private String iata;
     private String city;
 
@@ -23,6 +24,16 @@ public class Airport {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String toString() {

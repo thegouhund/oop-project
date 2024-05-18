@@ -16,12 +16,16 @@ public class PassengerDAO extends DAO<Passenger> {
 
     @Override
     public Passenger getById(int id) {
+        Passenger passenger;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger WHERE id = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                return new Passenger(result.getString("name"), result.getInt("age"));
+
+                passenger = new Passenger(result.getString("name"), result.getInt("age"));
+                passenger.setId(result.getInt("id"));
+                return passenger;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -38,28 +42,13 @@ public class PassengerDAO extends DAO<Passenger> {
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 passenger = new Passenger(result.getString("name"), result.getInt("age"));
+                passenger.setId(result.getInt("id"));
                 passengerList.add(passenger);
             }
             return passengerList;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public int getIdByName(String name) {
-        try {
-            name = name.replace("\"", "");
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger WHERE name = ?");
-            statement.setString(1, name);
-            ResultSet result = statement.executeQuery();
-            if (result.next()) {
-                return result.getInt("id");
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return 0;
     }
 
     @Override
@@ -94,6 +83,26 @@ public class PassengerDAO extends DAO<Passenger> {
             statement.setInt(2, passenger.getAge());
             statement.executeUpdate();
             System.out.println(statement);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public int addAndGetGeneratedId(Passenger passenger) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO passenger (name, age) VALUES (?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            statement.setString(1, passenger.getName());
+            statement.setInt(2, passenger.getAge());
+            statement.executeUpdate();
+            System.out.println(statement);
+
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Failed to retrieve auto-generated ID.");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
