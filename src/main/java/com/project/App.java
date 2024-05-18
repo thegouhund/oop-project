@@ -13,7 +13,7 @@ import io.github.palexdev.materialfx.theming.UserAgentBuilder;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("views/FirstScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("views/Login.fxml"));
 
         UserAgentBuilder.builder()
                 .themes(JavaFXThemes.MODENA)
