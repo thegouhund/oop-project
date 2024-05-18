@@ -17,16 +17,33 @@ public class UserDAO extends DAO<User> {
 
     @Override
     public User getById(int id) {
-        Passenger passenger;
+        User user;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger WHERE id = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
+                user = new User(result.getString("email"), result.getString("username"), result.getString("password"), result.getBoolean("isAdmin"));
+                user.setId(result.getInt("id"));
+                return user;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 
-                passenger = new Passenger(result.getString("name"), result.getInt("age"));
-                passenger.setId(result.getInt("id"));
-                return passenger;
+    public User login(String username, String password) {
+        User user;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM user WHERE username = ? AND password = ?");
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                user = new User(result.getString("email"), result.getString("username"), result.getString("password"), result.getBoolean("isAdmin"));
+                user.setId(result.getInt("id"));
+                return user;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -35,39 +52,27 @@ public class UserDAO extends DAO<User> {
     }
 
     @Override
-    public ArrayList<Passenger> getAll() {
-        Passenger passenger;
-        ArrayList<Passenger> passengerList = new ArrayList<>();
-        try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger");
-            ResultSet result = statement.executeQuery();
-            while (result.next()) {
-                passenger = new Passenger(result.getString("name"), result.getInt("age"));
-                passenger.setId(result.getInt("id"));
-                passengerList.add(passenger);
-            }
-            return passengerList;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public ArrayList<User> getAll() {
+//        Passenger passenger;
+//        ArrayList<Passenger> passengerList = new ArrayList<>();
+//        try {
+//            PreparedStatement statement = connection.prepareStatement("SELECT * FROM passenger");
+//            ResultSet result = statement.executeQuery();
+//            while (result.next()) {
+//                passenger = new Passenger(result.getString("name"), result.getInt("age"));
+//                passenger.setId(result.getInt("id"));
+//                passengerList.add(passenger);
+//            }
+//            return passengerList;
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+        return null;
     }
 
     @Override
-    public void update(User entity, int id) {
+    public void update(User user, int id) {
 
-    }
-
-    @Override
-    public void update(Passenger passenger, int id) {
-        try {
-            PreparedStatement statement = connection.prepareStatement("UPDATE passenger SET name = ?, age = ? WHERE id = ?");
-            statement.setString(1, passenger.getName());
-            statement.setInt(2, passenger.getAge());
-            statement.setInt(3, id);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Override
@@ -81,25 +86,26 @@ public class UserDAO extends DAO<User> {
         }
     }
 
-    @Override
     public void add(Passenger passenger) {
-        try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO passenger (name, age) VALUES (?, ?)");
-            statement.setString(1, passenger.getName());
-            statement.setInt(2, passenger.getAge());
-            statement.executeUpdate();
-            System.out.println(statement);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            PreparedStatement statement = connection.prepareStatement("INSERT INTO passenger (name, age) VALUES (?, ?)");
+//            statement.setString(1, passenger.getName());
+//            statement.setInt(2, passenger.getAge());
+//            statement.executeUpdate();
+//            System.out.println(statement);
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 
-    public int addAndGetGeneratedId(Passenger passenger) {
+    public int addAndGetGeneratedId(User user) {
         try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO passenger (name, age) VALUES (?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
-            statement.setString(1, passenger.getName());
-            statement.setInt(2, passenger.getAge());
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO user (email, username, password, isAdmin) VALUES (?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getUsername());
+            statement.setString(3, user.getPassword());
+            statement.setBoolean(4, user.isAdmin());
             statement.executeUpdate();
             System.out.println(statement);
 

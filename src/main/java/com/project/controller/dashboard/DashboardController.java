@@ -2,13 +2,7 @@ package com.project.controller.dashboard;
 
 import com.project.controller.Controller;
 import com.project.controller.dashboard.airline.DashboardAirlineController;
-import com.project.controller.dashboard.router.Router;
-import com.project.model.Airline;
-import io.github.palexdev.materialfx.controls.MFXButton;
-import io.github.palexdev.materialfx.controls.MFXTableColumn;
-import io.github.palexdev.materialfx.controls.MFXTableView;
-import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
-import javafx.collections.FXCollections;
+import com.project.controller.router.DashboardRouter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +15,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class DashboardController extends Controller implements Initializable {
@@ -50,13 +43,13 @@ public class DashboardController extends Controller implements Initializable {
     private Pane pnlOverview;
     @FXML
     private Pane pnlMenus;
-    private Router router;
+    private DashboardRouter dashboardRouter;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         openOverviewPane();
-        router = Router.getInstance(stackPaneMain);
+        dashboardRouter = DashboardRouter.getInstance(stackPaneMain);
     }
 
 
@@ -70,10 +63,10 @@ public class DashboardController extends Controller implements Initializable {
             pnlMenus.toFront();
         }
         if (actionEvent.getSource() == btnOverview) {
-            router.navigate("DashboardOverview.fxml");
+            dashboardRouter.navigate("DashboardOverview.fxml");
         }
         if (actionEvent.getSource() == btnAirlines) {
-            DashboardAirlineController controller = (DashboardAirlineController) router.navigate("DashboardAirline.fxml");
+            DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("DashboardAirline.fxml");
             controller.setStackPane(stackPaneMain);
         }
     }

@@ -22,8 +22,8 @@ module com.project {
     opens com.project.utils to javafx.fxml;
     exports com.project.controller.dashboard;
     opens com.project.controller.dashboard to javafx.fxml;
-    opens com.project.controller.dashboard.router to javafx.fxml;
-    exports com.project.controller.dashboard.router;
+    opens com.project.controller.router to javafx.fxml;
+    exports com.project.controller.router;
     opens com.project.controller.dashboard.airline to javafx.fxml;
     exports com.project.controller.dashboard.airline;
 }

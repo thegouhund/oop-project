@@ -1,7 +1,7 @@
 package com.project.controller.dashboard.airline;
 
 import com.project.controller.Controller;
-import com.project.controller.dashboard.router.Router;
+import com.project.controller.router.DashboardRouter;
 import com.project.dao.AirlineDAO;
 import com.project.model.Airline;
 import com.project.utils.DatabaseUtils;
@@ -17,7 +17,7 @@ public class DashboardEditAirlineController extends Controller {
     private MFXTextField airlineNameField;
     @FXML
     private MFXTextField airlineCodeField;
-    private Router router;
+    private DashboardRouter dashboardRouter;
 
     public DashboardEditAirlineController() {
     }
@@ -31,7 +31,7 @@ public class DashboardEditAirlineController extends Controller {
 
     @FXML
     private void initialize(){
-        router = Router.getInstance(stackPaneMain);
+        dashboardRouter = DashboardRouter.getInstance(stackPaneMain);
         System.out.println(selectedAirline);
     }
 
@@ -47,7 +47,7 @@ public class DashboardEditAirlineController extends Controller {
     }
 
     private void goBack() {
-        DashboardAirlineController controller = (DashboardAirlineController) router.navigate("DashboardAirline.fxml");
+        DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("DashboardAirline.fxml");
         controller.setStackPane(stackPaneMain);
     }
 
