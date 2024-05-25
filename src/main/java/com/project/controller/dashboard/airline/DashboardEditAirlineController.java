@@ -30,7 +30,8 @@ public class DashboardEditAirlineController extends Controller {
     }
 
     @FXML
-    private void initialize(){
+    private void initialize() {
+        stackPaneMain = super.getStackPane();
         dashboardRouter = DashboardRouter.getInstance(stackPaneMain);
         System.out.println(selectedAirline);
     }
@@ -47,11 +48,11 @@ public class DashboardEditAirlineController extends Controller {
     }
 
     private void goBack() {
-        DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("DashboardAirline.fxml");
+        DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("dashboard/airline/DashboardAirline.fxml");
         controller.setStackPane(stackPaneMain);
     }
 
-    public void setStackPane(StackPane stackPaneMain) {
-        this.stackPaneMain = stackPaneMain;
-    }
+//    public void setStackPane(StackPane stackPaneMain) {
+//        this.stackPaneMain = stackPaneMain;
+//    }
 }

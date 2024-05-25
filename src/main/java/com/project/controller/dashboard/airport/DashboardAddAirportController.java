@@ -1,21 +1,23 @@
-package com.project.controller.dashboard.airline;
+package com.project.controller.dashboard.airport;
 
 import com.project.controller.Controller;
 import com.project.controller.router.DashboardRouter;
 import com.project.dao.AirlineDAO;
+import com.project.dao.AirportDAO;
 import com.project.model.Airline;
+import com.project.model.Airport;
 import com.project.utils.DatabaseUtils;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
-import io.github.palexdev.materialfx.controls.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 
-public class DashboardAddAirlineController extends Controller {
+public class DashboardAddAirportController extends Controller {
     @FXML
-    private MFXTextField airlineNameField;
+    private MFXTextField airportIataField;
     @FXML
-    private MFXTextField airlineCodeField;
+    private MFXTextField airportCityField;
     @FXML
     private VBox vBoxMain;
     private StackPane stackPaneMain;
@@ -32,17 +34,17 @@ public class DashboardAddAirlineController extends Controller {
 
     @FXML
     private void onSubmit() {
-        String airlineName = airlineNameField.getText();
-        String airlineCode = airlineCodeField.getText();
+        String airportIata = airportIataField.getText();
+        String airportCity = airportCityField.getText();
 
-        AirlineDAO airlineDAO = new AirlineDAO(DatabaseUtils.getConnection());
-        airlineDAO.add(new Airline(airlineName));
+        AirportDAO airportDAO = new AirportDAO(DatabaseUtils.getConnection());
+        airportDAO.add(new Airport(airportIata, airportCity));
 
         goBack();
     }
 
     private void goBack() {
-        DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("dashboard/airline/DashboardAirline.fxml");
+        DashboardAirportController controller = (DashboardAirportController) dashboardRouter.navigate("dashboard/airport/DashboardAirport.fxml");
         controller.setStackPane(stackPaneMain);
     }
 }

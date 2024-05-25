@@ -41,17 +41,17 @@ public class DashboardAirlineController extends Controller {
         dashboardRouter = DashboardRouter.getInstance(stackPaneMain);
     }
 
-    public void createAddAirlineWindow() throws IOException {
-        stackPaneMain.setStyle("-fx-background-color: white");
-        DashboardAddAirlineController controller = (DashboardAddAirlineController) dashboardRouter.navigate("AddAirport.fxml");
+    public void createAddAirlineWindow() {
+        DashboardAddAirlineController controller = (DashboardAddAirlineController) dashboardRouter.navigate("dashboard/airline/AddAirline.fxml");
         controller.setStackPane(stackPaneMain);
+        stackPaneMain.setStyle("-fx-background-color: white");
     }
 
-    public void createEditAirlineWindow() throws IOException {
-        stackPaneMain.setStyle("-fx-background-color: white");
-        DashboardEditAirlineController controller = (DashboardEditAirlineController) dashboardRouter.navigate("EditAirport.fxml");
+    public void createEditAirlineWindow() {
+        DashboardEditAirlineController controller = (DashboardEditAirlineController) dashboardRouter.navigate("dashboard/airline/EditAirline.fxml");
         controller.setStackPane(stackPaneMain);
         controller.setSelectedAirline(tblAirline.getSelectionModel().getSelectedValue());
+        stackPaneMain.setStyle("-fx-background-color: white");
     }
 
     public void createDeleteAirlineDialog() {

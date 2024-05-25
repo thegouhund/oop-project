@@ -35,7 +35,7 @@ public class LoginController {
         if (user != null) {
             if(user.isAdmin()){
                 // TODO switch to Beli Tiket Router Needed???
-                appRouter.navigate(event, "Dashboard.fxml");
+                appRouter.navigate(event, "dashboard/Dashboard.fxml");
             } else {
                 appRouter.navigate(event, "FormScene.fxml");
             }

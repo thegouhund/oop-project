@@ -6,7 +6,10 @@ public abstract class Controller {
     protected StackPane stackPaneMain;
 
     public void setStackPane(StackPane stackPaneMain) {
-        System.out.println(stackPaneMain);
         this.stackPaneMain = stackPaneMain;
+    }
+
+    public StackPane getStackPane() {
+        return stackPaneMain;
     }
 }
