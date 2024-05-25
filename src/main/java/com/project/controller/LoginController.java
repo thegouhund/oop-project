@@ -12,7 +12,7 @@ import javafx.fxml.FXML;
 
 public class LoginController {
     @FXML
-    private MFXTextField fieldUsername;
+    private MFXTextField fieldEmail;
     @FXML
     private MFXTextField fieldPassword;
     @FXML
@@ -25,12 +25,17 @@ public class LoginController {
     }
 
     @FXML
+    private void switchToRegister(ActionEvent event) {
+        appRouter.navigate(event, "RegistrasiAkun.fxml");
+    }
+
+    @FXML
     private void onLogin(ActionEvent event) {
         UserDAO userDAO = new UserDAO(DatabaseUtils.getConnection());
-        String username = fieldUsername.getText();
+        String email = fieldEmail.getText();
         String password = fieldPassword.getText();
 
-        User user = userDAO.login(username, password);
+        User user = userDAO.login(email, password);
 
         if (user != null) {
             if(user.isAdmin()){
@@ -40,7 +45,7 @@ public class LoginController {
                 appRouter.navigate(event, "FormScene.fxml");
             }
         } else {
-                // TODO create dialog "Username atau Password Salah"
+            System.out.println("Wrong username/password!");
         }
     }
 }
