@@ -10,7 +10,6 @@ public class TimeUtils {
     }
 
     public static LocalDateTime strToLocalDateTime(String strDate) {
-        strDate += " 00:00:00";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return LocalDateTime.parse(strDate, formatter);
     }

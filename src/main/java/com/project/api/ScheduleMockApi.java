@@ -14,7 +14,7 @@ import static com.project.utils.TimeUtils.strToLocalDateTime;
 public class ScheduleMockApi {
     public static Schedule generate(Airport airportFrom, Airport airportDestination, String strDate, int passengerAmount) {
         // randomize departure time from 00:00 to 23:00
-        LocalDateTime departure = strToLocalDateTime(strDate);
+        LocalDateTime departure = strToLocalDateTime(strDate + " 00:00:00");
         departure = departure.plusHours(RandomUtils.random().nextInt(23));
 
         // randomize airlines

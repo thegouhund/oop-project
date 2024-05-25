@@ -36,20 +36,47 @@ public class TicketDAO extends DAO<Ticket> {
 
     @Override
     public ArrayList<Ticket> getAll() {
-//        Ticket ticket;
-//        ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
-//        try {
-//            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ticket");
-//            ResultSet result = statement.executeQuery();
-//            while (result.next()) {
+        Ticket ticket;
+        ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ticket");
+            ResultSet result = statement.executeQuery();
+            while (result.next()) {
+                Passenger passenger = passengerDAO.getById(result.getInt("passenger_id"));
 //                ticket = new Ticket(result.getInt("name"), result.getInt("age"));
 //                ticketList.add(ticket);
-//            }
-//            return ticketList;
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-        return null;
+            }
+            return ticketList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+//        return null;
+    }
+
+    public ArrayList<Ticket> getBySchedule() {
+        Ticket ticket;
+        ArrayList<Ticket> ticketList = new ArrayList<Ticket>();
+        try {
+            PreparedStatement statementSchedule = connection.prepareStatement("SELECT DISTINCT schedule_id FROM ticket");
+            ResultSet resultSchedule = statementSchedule.executeQuery();
+            while (resultSchedule.next()) {
+                PreparedStatement statementPassenger = connection.prepareStatement("SELECT * FROM ticket WHERE schedule_id = ?");
+                statementPassenger.setInt(1, resultSchedule.getInt("schedule_id"));
+                ResultSet resultPassenger = statementPassenger.executeQuery();
+                ArrayList<Passenger> passengerList = new ArrayList<>();
+                while (resultPassenger.next()) {
+                    Passenger passenger = passengerDAO.getById(resultPassenger.getInt("passenger_id"));
+                    passengerList.add(passenger);
+                }
+                Schedule schedule = scheduleDAO.getById(resultSchedule.getInt("schedule_id"));
+                ticket = new Ticket(passengerList, schedule);
+                ticketList.add(ticket);
+            }
+            return ticketList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+//        return null;
     }
 
     @Override

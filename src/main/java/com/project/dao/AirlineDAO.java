@@ -87,6 +87,4 @@ public class AirlineDAO extends DAO<Airline> {
             throw new RuntimeException(e);
         }
     }
-
-
 }

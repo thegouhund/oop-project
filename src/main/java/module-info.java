@@ -26,4 +26,8 @@ module com.project {
     exports com.project.controller.router;
     opens com.project.controller.dashboard.airline to javafx.fxml;
     exports com.project.controller.dashboard.airline;
+    opens com.project.controller.dashboard.airport to javafx.fxml;
+    exports com.project.controller.dashboard.airport;
+    opens com.project.controller.dashboard.ticket to javafx.fxml;
+    exports com.project.controller.dashboard.ticket;
 }

@@ -20,18 +20,25 @@ public class ScheduleDAO extends DAO<Schedule> {
 
     @Override
     public Schedule getById(int id) {
-//        try {
-//            PreparedStatement statement = connection.prepareStatement("SELECT * FROM schedule WHERE id = ?");
-//            statement.setInt(1, id);
-//            ResultSet result = statement.executeQuery();
-//            if (result.next()) {
-//                return new Schedule(result.getString("name"), result.getInt("age"));
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return null;
-        return null;
+        Schedule schedule = null;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM schedule WHERE id = ?");
+            statement.setInt(1, id);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
+                schedule = new Schedule();
+                schedule.setId(result.getInt("id"));
+                schedule.setAirline(airlineDAO.getById(result.getInt("airline_id")));
+                schedule.setAirportFrom(airportDAO.getById(result.getInt("airport_arrival_id")));
+                schedule.setAirportDestination(airportDAO.getById(result.getInt("airport_departure_id")));
+                schedule.setArrivalTime(TimeUtils.strToLocalDateTime(result.getString("arrival_time")));
+                schedule.setDepartureTime(TimeUtils.strToLocalDateTime(result.getString("departure_time")));
+                schedule.setPrice(result.getDouble("price"));
+            }
+            return schedule;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
