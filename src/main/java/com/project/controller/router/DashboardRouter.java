@@ -31,9 +31,10 @@ public class DashboardRouter {
             stackPaneMain.getChildren().add(root);
             return (Controller) controller;
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println("Error loading FXML file: " + e.getMessage());
+            throw new RuntimeException(e);
         }
-        return null;
+
     }
 
 }
