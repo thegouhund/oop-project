@@ -7,64 +7,88 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.RegisterController">
    <children>
-      <Label layoutX="230.0" layoutY="94.0" text="Halo! Registrasi untuk memulai!">
+      <Label layoutX="230.0" layoutY="47.0" prefWidth="401.0" text="Halo! Registrasi untuk memulai!">
          <font>
             <Font name="Open Sans Bold" size="25.0" />
          </font>
       </Label>
-      <MFXTextField fx:id="fieldEmail" floatMode="ABOVE" layoutX="263.0" layoutY="288.0" onAction="#onRegister" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan email anda" />
-      <Label layoutX="264.0" layoutY="345.0" text="Password">
-         <font>
-            <Font name="Open Sans Bold" size="14.0" />
-         </font>
-      </Label>
-      <MFXPasswordField fx:id="fieldPassword" floatMode="ABOVE" layoutX="263.0" layoutY="372.0" onAction="#onRegister" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan password anda" />
-      <MFXButton fx:id="btnRegister" layoutX="54.0" layoutY="439.0" onAction="#onRegister" prefHeight="39.0" prefWidth="750.0" rippleColor="#cc9bfa" style="-fx-background-color: #cc9bfa;" text="Registrasi">
+      <VBox layoutX="257.0" layoutY="137.0" spacing="8.0">
+         <children>
+            <Pane>
+               <children>
+                  <MFXTextField fx:id="fieldEmail" floatMode="ABOVE" layoutY="29.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan email anda" />
+                  <Label layoutX="2.0" text="Email">
+                     <font>
+                        <Font name="Open Sans Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <MFXTextField fx:id="fieldUsername" floatMode="ABOVE" layoutY="29.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan username anda">
+                     <font>
+                        <Font name="Open Sans Regular" size="11.815384864807129" />
+                     </font>
+                  </MFXTextField>
+                  <Label layoutX="1.0" text="Username">
+                     <font>
+                        <Font name="Open Sans Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <Label layoutX="1.0" text="Password">
+                     <font>
+                        <Font name="Open Sans Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <MFXPasswordField fx:id="fieldPassword" floatMode="ABOVE" layoutY="27.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan password anda" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <MFXButton layoutX="217.0" layoutY="410.0" onAction="#onRegister" prefHeight="39.0" prefWidth="432.0" style="-fx-background-color: #720fc7; -fx-text-fill: white;" text="Registrasi" textFill="WHITE">
          <font>
             <Font name="Open Sans Regular" size="11.815384864807129" />
          </font></MFXButton>
-      <Label layoutX="265.0" layoutY="259.0" text="Email">
-         <font>
-            <Font name="Open Sans Bold" size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="567.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="357.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../Pictures/icon%20ui/WhatsApp_Image_2024-05-17_at_20.58.06-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label layoutX="290.0" layoutY="130.0" text="Masukkan kredensial anda untuk membuat akun.">
+      <Label layoutX="290.0" layoutY="83.0" text="Masukkan kredensial anda untuk membuat akun.">
          <font>
             <Font name="Open Sans Regular" size="11.815384864807129" />
          </font></Label>
-      <ImageView fitHeight="130.0" fitWidth="174.0" layoutX="343.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="130.0" fitWidth="174.0" layoutX="343.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../Pictures/icon%20ui/WhatsApp_Image_2024-05-17_at_20.13.24-removebg-preview.png" />
          </image>
       </ImageView>
-      <MFXTextField fx:id="fieldUsername" floatMode="ABOVE" layoutX="263.0" layoutY="196.0" onAction="#onRegister" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan nama anda">
-         <font>
-            <Font name="Open Sans Regular" size="11.815384864807129" />
-         </font></MFXTextField>
-      <Label layoutX="264.0" layoutY="167.0" text="Nama">
-         <font>
-            <Font name="Open Sans Bold" size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="566.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="357.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../Pictures/icon%20ui/WhatsApp_Image_2024-05-17_at_20.13.24_2_-removebg-preview.png" />
          </image>
       </ImageView>
-      <Label layoutX="343.0" layoutY="495.0" text="Sudah punya akun sebelumnya?">
+      <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="765.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Pictures/icon%20ui/WhatsApp_Image_2024-05-17_at_20.13.24_1_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="311.0" layoutY="468.0" text="Sudah memiliki akun?">
          <font>
             <Font name="Open Sans Regular" size="12.0" />
          </font>
       </Label>
-      <MFXButton fx:id="MasukAkun" layoutX="208.0" layoutY="525.0" onAction="#switchToLogin" prefHeight="36.0" prefWidth="441.0" rippleColor="#cc9bfa" style="-fx-background-color: #cc9bfa;" text="Masuk Sekarang" />
+      <MFXButton fx:id="MasukAkunPengguna" layoutX="433.0" layoutY="459.0" onAction="#switchToLogin" prefHeight="36.0" style="-fx-background-color: transparent; -fx-text-fill: #0000EE;" text="Masuk Sekarang" textFill="#0606f2" />
    </children>
 </AnchorPane>

@@ -1,14 +1,11 @@
-package com.project.controller.router;
+package com.project.router;
 
 import com.project.controller.Controller;
-import io.github.palexdev.materialfx.theming.JavaFXThemes;
-import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
-import io.github.palexdev.materialfx.theming.UserAgentBuilder;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
@@ -27,16 +24,19 @@ public class AppRouter {
 
     public Controller navigate(ActionEvent event, String fxmlPath) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/project/views/" + fxmlPath)));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/" + fxmlPath));
+            Parent root = loader.load();
+            Controller controller = loader.getController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
             stage.setResizable(false);
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+            return controller;
         } catch (IOException e) {
             System.out.println(e);
         }
         return null;
     }
-
 }

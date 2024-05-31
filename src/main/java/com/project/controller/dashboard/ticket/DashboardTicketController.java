@@ -2,7 +2,8 @@ package com.project.controller.dashboard.ticket;
 
 import com.project.controller.Controller;
 import com.project.controller.dashboard.airport.DashboardEditAirportController;
-import com.project.controller.router.DashboardRouter;
+import com.project.model.Airport;
+import com.project.router.DashboardRouter;
 import com.project.dao.TicketDAO;
 import com.project.model.Ticket;
 import com.project.utils.DatabaseUtils;
@@ -14,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
@@ -32,11 +34,11 @@ public class DashboardTicketController extends Controller {
         TicketDAO ticketDAO = new TicketDAO(conn);
         ObservableList<Ticket> tickets = FXCollections.observableArrayList(ticketDAO.getBySchedule());
 
-        MFXTableColumn<Ticket> airlineNameColumn = new MFXTableColumn<>("Maskapai");
-        MFXTableColumn<Ticket> airportFromColumn = new MFXTableColumn<>("Bandara Asal", false);
-        MFXTableColumn<Ticket> airportDestinationColumn = new MFXTableColumn<>("Bandara Tujuan", false);
-        MFXTableColumn<Ticket> scheduleDepartureTime = new MFXTableColumn<>("Waktu Berangkat", false);
-        MFXTableColumn<Ticket> schedulePrice = new MFXTableColumn<>("Harga", false);
+        MFXTableColumn<Ticket> airlineNameColumn = new MFXTableColumn<>("Maskapai", true);
+        MFXTableColumn<Ticket> airportFromColumn = new MFXTableColumn<>("Bandara Asal", true);
+        MFXTableColumn<Ticket> airportDestinationColumn = new MFXTableColumn<>("Bandara Tujuan", true);
+        MFXTableColumn<Ticket> scheduleDepartureTime = new MFXTableColumn<>("Waktu Berangkat", true);
+        MFXTableColumn<Ticket> schedulePrice = new MFXTableColumn<>("Harga", true);
 
         airlineNameColumn.setRowCellFactory(device -> new MFXTableRowCell<>(ticket -> ticket.getSchedule().getAirline().getName()));
         airportFromColumn.setRowCellFactory(device -> new MFXTableRowCell<>(ticket -> ticket.getSchedule().getAirportFrom().getIata()));
@@ -56,13 +58,20 @@ public class DashboardTicketController extends Controller {
 
     @FXML
     public void createTablePassengerForSelectedTicket() throws IOException {
-        System.out.println("PASSENGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER" + tblTicket.getSelectionModel().getSelectedValue().getPassengers());
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/" + "dashboard/ticket/TablePassenger.fxml"));
-        Parent root = loader.load();
-        TablePassengerController controller = loader.getController();
-        stackPaneMain.getChildren().clear();
-        stackPaneMain.getChildren().add(root);
-        controller.setSelectedPassenger(tblTicket.getSelectionModel().getSelectedValue().getPassengers());
+        Ticket selectedTicket = tblTicket.getSelectionModel().getSelectedValue();
+
+        System.out.println(selectedTicket);
+        if (selectedTicket != null) {
+            TablePassengerController controller = (TablePassengerController) dashboardRouter.navigate("dashboard/ticket/TablePassenger.fxml" );
+            controller.setStackPane(stackPaneMain);
+            controller.setSelectedPassenger(tblTicket.getSelectionModel().getSelectedValue().getPassengers());
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error" );
+            alert.setHeaderText("Pilih Tiket" );
+            alert.setContentText("Pilih tiket yang ingin dilihat!" );
+            alert.showAndWait();
+        }
     }
 
     public void setStackPane(StackPane stackPane) {

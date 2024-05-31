@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnlAirline" prefHeight="576.0" prefWidth="859.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.dashboard.ticket.TablePassengerController">
+   <children>
+      <MFXTableView fx:id="tblPassenger" layoutX="38.0" layoutY="89.0" prefHeight="447.0" prefWidth="784.0" />
+      <Label fx:id="labelTitle" layoutX="38.0" layoutY="43.0" text="Data Penumpang untuk Tiket">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

@@ -1,7 +1,9 @@
-package com.project.controller.router;
+package com.project.router;
 
 import com.project.controller.Controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 
@@ -26,10 +28,10 @@ public class DashboardRouter {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/" + fxmlPath));
             Parent root = loader.load();
-            Object controller = loader.getController();
+            Controller controller = loader.getController();
             stackPaneMain.getChildren().clear();
             stackPaneMain.getChildren().add(root);
-            return (Controller) controller;
+            return controller;
         } catch (IOException e) {
             System.out.println("Error loading FXML file: " + e.getMessage());
             throw new RuntimeException(e);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.UserTicketController">
+   <children>
+      <Label layoutX="44.0" layoutY="34.0" text="Tiket Anda">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <MFXButton layoutX="576.0" layoutY="422.0" onAction="#switchToForm" prefHeight="45.0" prefWidth="187.0" style="-fx-background-color: #1A744C; -fx-text-fill: white;" text="Beli Tiket" textFill="WHITE" />
+      <MFXScrollPane hbarPolicy="NEVER" layoutX="44.0" layoutY="80.0" prefHeight="334.0" prefWidth="741.0" style="-fx-background-color: transparent; -fx-border-color: #ddd; -fx-border-radius: 8;">
+         <content>
+            <VBox fx:id="vBoxTicket" prefHeight="345.0" prefWidth="700.0" spacing="16.0" />
+         </content>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </MFXScrollPane>
+      <MFXButton layoutX="44.0" layoutY="422.0" onAction="#switchToLogin" prefHeight="45.0" prefWidth="187.0" style="-fx-background-color: #D03342; -fx-text-fill: white;" text="Sign Out" textFill="WHITE" />
+   </children>
+</AnchorPane>

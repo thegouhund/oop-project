@@ -9,21 +9,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.LoginController">
+<!--<?import io.github.palexdev.mfxcomponents.controls.buttons.MFXButton?>-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.LoginController">
    <children>
       <Label layoutX="45.0" layoutY="115.0" text="Masuk Ke Akun Anda">
          <font>
             <Font name="Open Sans Bold" size="25.0" />
          </font>
       </Label>
-      <MFXTextField fx:id="fieldEmail" floatMode="ABOVE" layoutX="45.0" layoutY="220.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan email anda" />
+      <MFXTextField fx:id="fieldUsername" floatMode="ABOVE" layoutX="45.0" layoutY="220.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan email anda" />
       <Label layoutX="47.0" layoutY="295.0" text="Password">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <MFXPasswordField fx:id="fieldPassword" floatMode="ABOVE" layoutX="46.0" layoutY="322.0" onAction="#onLogin" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan password anda" />
-      <MFXButton fx:id="MasukAkun" layoutX="46.0" layoutY="416.0" onAction="#onLogin" prefHeight="33.0" prefWidth="340.0" rippleColor="#cc9bfa" style="-fx-background-color: #cc9bfa;" text="Masuk" textAlignment="CENTER">
+      <MFXPasswordField fx:id="fieldPassword" floatMode="ABOVE" layoutX="46.0" layoutY="322.0" prefHeight="49.0" prefWidth="340.0" promptText="Masukkan password anda" />
+      <MFXButton fx:id="MasukAkun" layoutX="46.0" layoutY="416.0" onAction="#onLogin" prefHeight="33.0" prefWidth="340.0" style="-fx-background-color: #720fc7; -fx-text-fill: white;" text="Masuk">
          <font>
             <Font name="Open Sans Regular" size="11.815384864807129" />
          </font></MFXButton>
@@ -32,25 +34,25 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="165.0" layoutY="471.0" text="Belum punya akun?" />
+      <Label layoutX="120.0" layoutY="469.0" text="Belum punya akun?" />
       <ImageView fitHeight="41.0" fitWidth="36.0" layoutX="349.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/WhatsApp_Image_2024-05-17_at_20.58.06-removebg-preview.png" />
+            <Image url="@../img/emailIcon.png" />
          </image>
       </ImageView>
       <Label layoutX="46.0" layoutY="151.0" text="Masukkan kredensial anda untuk mengakses akun anda.">
          <font>
             <Font name="Open Sans Regular" size="11.815384864807129" />
          </font></Label>
-      <MFXButton fx:id="RegistrasiAkun" layoutX="144.0" layoutY="509.0" onAction="#switchToRegister" prefHeight="33.0" prefWidth="143.0" rippleColor="#cc9bfa" style="-fx-background-color: #cc9bfa;" text="Registrasi" />
+      <MFXButton fx:id="RegistrasiAkun" layoutX="236.0" layoutY="461.0" onAction="#switchToRegister" prefHeight="33.0" style="-fx-background-color: transparent; -fx-text-fill: #0000EE;" text="Registrasi" />
       <ImageView fitHeight="120.0" fitWidth="176.0" layoutX="-2.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/WhatsApp_Image_2024-05-17_at_20.13.24-removebg-preview.png" />
+            <Image url="@../img/loginIcon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="540.0" fitWidth="392.0" layoutX="446.0" layoutY="19.0">
          <image>
-            <Image url="@../img/WhatsApp%20Image%202024-05-25%20at%2016.11.25.png" />
+            <Image url="@../img/loginImg.png" />
          </image>
       </ImageView>
    </children>

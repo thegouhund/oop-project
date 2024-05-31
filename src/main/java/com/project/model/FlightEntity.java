@@ -1,9 +1,9 @@
 package com.project.model;
 
-public abstract class Entity {
+public abstract class FlightEntity {
     private String name;
 
-    public Entity(String name){
+    public FlightEntity(String name){
         this.name = name;
     }
 
