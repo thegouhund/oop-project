@@ -1,10 +1,8 @@
 package com.project.controller.dashboard.airport;
 
 import com.project.controller.Controller;
-import com.project.controller.router.DashboardRouter;
-import com.project.dao.AirlineDAO;
+import com.project.router.DashboardRouter;
 import com.project.dao.AirportDAO;
-import com.project.model.Airline;
 import com.project.model.Airport;
 import com.project.utils.DatabaseUtils;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -15,11 +13,10 @@ import javafx.scene.layout.VBox;
 
 public class DashboardAddAirportController extends Controller {
     @FXML
-    private MFXTextField airportIataField;
-    @FXML
-    private MFXTextField airportCityField;
+    private MFXTextField airportIataField, airportCityField, airportNameField;
     @FXML
     private VBox vBoxMain;
+    
     private StackPane stackPaneMain;
     private DashboardRouter dashboardRouter;
 
@@ -36,9 +33,10 @@ public class DashboardAddAirportController extends Controller {
     private void onSubmit() {
         String airportIata = airportIataField.getText();
         String airportCity = airportCityField.getText();
+        String airportName = airportNameField.getText();
 
         AirportDAO airportDAO = new AirportDAO(DatabaseUtils.getConnection());
-        airportDAO.add(new Airport(airportIata, airportCity));
+        airportDAO.add(new Airport(airportIata, airportCity, airportName));
 
         goBack();
     }

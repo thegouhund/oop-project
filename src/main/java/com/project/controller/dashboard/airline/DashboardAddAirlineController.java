@@ -1,7 +1,7 @@
 package com.project.controller.dashboard.airline;
 
 import com.project.controller.Controller;
-import com.project.controller.router.DashboardRouter;
+import com.project.router.DashboardRouter;
 import com.project.dao.AirlineDAO;
 import com.project.model.Airline;
 import com.project.utils.DatabaseUtils;
@@ -36,7 +36,7 @@ public class DashboardAddAirlineController extends Controller {
         String airlineCode = airlineCodeField.getText();
 
         AirlineDAO airlineDAO = new AirlineDAO(DatabaseUtils.getConnection());
-        airlineDAO.add(new Airline(airlineName));
+        airlineDAO.add(new Airline(airlineName, airlineCode));
 
         goBack();
     }

@@ -1,7 +1,7 @@
 package com.project.controller.dashboard.airport;
 
 import com.project.controller.Controller;
-import com.project.controller.router.DashboardRouter;
+import com.project.router.DashboardRouter;
 import com.project.dao.AirportDAO;
 import com.project.model.Airport;
 import com.project.utils.DatabaseUtils;
@@ -14,9 +14,7 @@ public class DashboardEditAirportController extends Controller {
     private Airport selectedAirport;
     private StackPane stackPaneMain;
     @FXML
-    private MFXTextField airportIataField;
-    @FXML
-    private MFXTextField airportCityField;
+    private MFXTextField airportIataField, airportCityField, airportNameField;
     private DashboardRouter dashboardRouter;
 
     public void setSelectedAirport(Airport selectedAirport) {
@@ -24,6 +22,7 @@ public class DashboardEditAirportController extends Controller {
         this.selectedAirport = selectedAirport;
         this.airportIataField.setText(selectedAirport.getIata());
         this.airportCityField.setText(selectedAirport.getCity());
+        this.airportNameField.setText(selectedAirport.getName());
     }
 
     @FXML
@@ -36,9 +35,10 @@ public class DashboardEditAirportController extends Controller {
     private void onSubmit() {
         String airportIata = airportIataField.getText();
         String airportCity = airportCityField.getText();
+        String airportName = airportNameField.getText();
 
         AirportDAO airportDao = new AirportDAO(DatabaseUtils.getConnection());
-        airportDao.update(new Airport(airportIata, airportCity), selectedAirport.getId());
+        airportDao.update(new Airport(airportIata, airportCity, airportName), selectedAirport.getId());
 
         goBack();
     }

@@ -82,7 +82,7 @@ public class AirportDAO extends DAO<Airport> {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO airport (iata, city, name) VALUES (?, ?, ?)");
             statement.setString(1, airport.getIata());
             statement.setString(2, airport.getCity());
-            statement.setString(3, airport.getName());
+            statement.setString(2, airport.getName());
             statement.executeUpdate();
             System.out.println(statement);
         } catch (SQLException e) {

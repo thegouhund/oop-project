@@ -1,7 +1,7 @@
 package com.project.controller.dashboard.airline;
 
 import com.project.controller.Controller;
-import com.project.controller.router.DashboardRouter;
+import com.project.router.DashboardRouter;
 import com.project.dao.AirlineDAO;
 import com.project.model.Airline;
 import com.project.utils.DatabaseUtils;
@@ -42,7 +42,7 @@ public class DashboardEditAirlineController extends Controller {
         String airlineCode = airlineCodeField.getText();
 
         AirlineDAO airlineDAO = new AirlineDAO(DatabaseUtils.getConnection());
-        airlineDAO.update(new Airline(airlineName), selectedAirline.getId());
+        airlineDAO.update(new Airline(airlineName, airlineCode), selectedAirline.getId());
 
         goBack();
     }
@@ -51,8 +51,4 @@ public class DashboardEditAirlineController extends Controller {
         DashboardAirlineController controller = (DashboardAirlineController) dashboardRouter.navigate("dashboard/airline/DashboardAirline.fxml");
         controller.setStackPane(stackPaneMain);
     }
-
-//    public void setStackPane(StackPane stackPaneMain) {
-//        this.stackPaneMain = stackPaneMain;
-//    }
 }

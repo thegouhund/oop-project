@@ -1,5 +1,6 @@
 package com.project;
 
+import com.project.controller.router.AppRouter;
 import io.github.palexdev.materialfx.theming.JavaFXThemes;
 import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
 import javafx.application.Application;

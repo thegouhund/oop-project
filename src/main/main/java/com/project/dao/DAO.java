@@ -21,7 +21,5 @@ public abstract class DAO<T> {
     public void add(T entity) {
     }
 
-    public abstract int size();
-
 }
 

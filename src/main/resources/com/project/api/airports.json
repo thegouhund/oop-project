@@ -1,722 +1,844 @@
 [
   {
     "city": "Agats",
-    "iata": "EWE"
+    "iata": "EWE",
+    "name": "Agats Airport"
   },
   {
     "city": "Alor Island",
-    "iata": "ARD"
+    "iata": "ARD",
+    "name": "Alor Island Airport"
   },
   {
     "city": "Amahai",
-    "iata": "AHI"
+    "iata": "AHI",
+    "name": "Amahai Airport"
   },
   {
     "city": "Ambon",
-    "iata": "AMQ"
+    "iata": "AMQ",
+    "name": "Pattimura Airport"
   },
   {
     "city": "Ampana",
-    "iata": "OJU"
+    "iata": "OJU",
+    "name": "Ampana Airport"
   },
   {
     "city": "Anggi",
-    "iata": "AGD"
+    "iata": "AGD",
+    "name": "Anggi Airport"
   },
   {
     "city": "Atambua",
-    "iata": "ABU"
+    "iata": "ABU",
+    "name": "Haliwen Airport"
   },
   {
     "city": "Ayawasi",
-    "iata": "AYW"
+    "iata": "AYW",
+    "name": "Ayawasi Airport"
   },
   {
     "city": "Babo",
-    "iata": "BXB"
+    "iata": "BXB",
+    "name": "Babo Airport"
   },
   {
     "city": "Balikpapan",
-    "iata": "BPN"
+    "iata": "BPN",
+    "name": "Sultan Aji Muhammad Sulaiman Airport"
   },
   {
     "city": "Banda",
-    "iata": "NDA"
+    "iata": "NDA",
+    "name": "Bandanaira Airport"
   },
   {
     "city": "Banda Aceh",
-    "iata": "BTJ"
+    "iata": "BTJ",
+    "name": "Sultan Iskandar Muda International Airport"
   },
   {
     "city": "Bandar Lampung",
-    "iata": "TKG"
+    "iata": "TKG",
+    "name": "Radin Inten II Airport"
   },
   {
     "city": "Bandung",
-    "iata": "BDO"
+    "iata": "BDO",
+    "name": "Husein Sastranegara International Airport"
   },
   {
     "city": "Bandung",
-    "iata": "KJT"
+    "iata": "KJT",
+    "name": "Kertajati International Airport"
   },
   {
     "city": "Banjarmasin",
-    "iata": "BDJ"
+    "iata": "BDJ",
+    "name": "Syamsudin Noor Airport"
   },
   {
     "city": "Banyuwangi",
-    "iata": "BWX"
+    "iata": "BWX",
+    "name": "Blimbingsari Airport"
   },
   {
     "city": "Batam",
-    "iata": "BTH"
+    "iata": "BTH",
+    "name": "Hang Nadim International Airport"
   },
   {
     "city": "Batu Islands",
-    "iata": "LSE"
+    "iata": "LSE",
+    "name": "Batu Islands Airport"
   },
   {
     "city": "Batulicin",
-    "iata": "BTW"
+    "iata": "BTW",
+    "name": "Batu Licin Airport"
   },
   {
     "city": "Baubau",
-    "iata": "BUW"
+    "iata": "BUW",
+    "name": "Betoambari Airport"
   },
   {
     "city": "Bawean",
-    "iata": "BXW"
+    "iata": "BXW",
+    "name": "Bawean Airport"
   },
   {
     "city": "Bengkulu",
-    "iata": "BKS"
+    "iata": "BKS",
+    "name": "Fatmawati Soekarno Airport"
   },
   {
     "city": "Benjina",
-    "iata": "BJK"
+    "iata": "BJK",
+    "name": "Benjina Airport"
   },
   {
     "city": "Berau",
-    "iata": "BEJ"
+    "iata": "BEJ",
+    "name": "Berau Airport"
   },
   {
     "city": "Biak",
-    "iata": "BIK"
+    "iata": "BIK",
+    "name": "Frans Kaisiepo Airport"
   },
   {
     "city": "Bima",
-    "iata": "BMU"
+    "iata": "BMU",
+    "name": "Sultan Muhammad Salahuddin Airport"
   },
   {
     "city": "Bintuni",
-    "iata": "NTI"
+    "iata": "NTI",
+    "name": "Bintuni Airport"
   },
   {
     "city": "Blangpidie",
-    "iata": "KJX"
+    "iata": "KJX",
+    "name": "Blangpidie Airport"
   },
   {
     "city": "Bokondini",
-    "iata": "BUI"
+    "iata": "BUI",
+    "name": "Bokondini Airport"
   },
   {
     "city": "Bontang",
-    "iata": "BXT"
+    "iata": "BXT",
+    "name": "Bontang Airport"
   },
   {
     "city": "Buleleng",
-    "iata": "WSN"
+    "iata": "WSN",
+    "name": "Susi Airfield"
   },
   {
     "city": "Buli",
-    "iata": "PGQ"
+    "iata": "PGQ",
+    "name": "Buli Airport"
   },
   {
     "city": "Buol",
-    "iata": "UOL"
+    "iata": "UOL",
+    "name": "Buol Airport"
   },
   {
     "city": "Cepu",
-    "iata": "CPF"
+    "iata": "CPF",
+    "name": "Cepu Airport"
   },
   {
     "city": "Cilacap",
-    "iata": "CXP"
+    "iata": "CXP",
+    "name": "Tunggul Wulung Airport"
   },
   {
     "city": "Cirebon",
-    "iata": "CBN"
+    "iata": "CBN",
+    "name": "Cirebon Airport"
   },
   {
     "city": "Dabo",
-    "iata": "SIQ"
+    "iata": "SIQ",
+    "name": "Dabo Airport"
   },
   {
     "city": "Dekai",
-    "iata": "DEX"
+    "iata": "DEX",
+    "name": "Dekai Airport"
   },
   {
     "city": "Denpasar",
-    "iata": "DPS"
+    "iata": "DPS",
+    "name": "Ngurah Rai International Airport"
   },
   {
     "city": "Derawan Islands",
-    "iata": "RTU"
+    "iata": "RTU",
+    "name": "Derawan Islands Airport"
   },
   {
     "city": "Dobo",
-    "iata": "DOB"
+    "iata": "DOB",
+    "name": "Dobo Airport"
   },
   {
     "city": "Dumai",
-    "iata": "DUM"
+    "iata": "DUM",
+    "name": "Sultan Syarif Qasim II International Airport"
   },
   {
     "city": "Enarotali",
-    "iata": "EWI"
+    "iata": "EWI",
+    "name": "Enarotali Airport"
   },
   {
     "city": "Ende",
-    "iata": "ENE"
+    "iata": "ENE",
+    "name": "H Hasan Aroeboesman Airport"
   },
   {
     "city": "Enggano",
-    "iata": "—"
+    "iata": "—",
+    "name": ""
   },
   {
     "city": "Fakfak",
-    "iata": "FKQ"
+    "iata": "FKQ",
+    "name": "Torea Airport"
   },
   {
     "city": "Galela",
-    "iata": "GLX"
+    "iata": "GLX",
+    "name": "Galela Airport"
   },
   {
     "city": "Gorontalo",
-    "iata": "GTO"
+    "iata": "GTO",
+    "name": "Jalaluddin Airport"
   },
   {
     "city": "Gunung Sitoli",
-    "iata": "GNS"
+    "iata": "GNS",
+    "name": "Binaka Airport"
   },
   {
     "city": "Jakarta",
-    "iata": "HLP"
+    "iata": "HLP",
+    "name": "Halim Perdanakusuma International Airport"
   },
   {
     "city": "Jakarta",
-    "iata": "CGK"
+    "iata": "CGK",
+    "name": "Soekarno-Hatta International Airport"
   },
   {
     "city": "Jambi",
-    "iata": "DJB"
+    "iata": "DJB",
+    "name": "Sultan Thaha Airport"
   },
   {
     "city": "Jayapura",
-    "iata": "DJJ"
+    "iata": "DJJ",
+    "name": "Sentani Airport"
   },
   {
     "city": "Jemaja Island",
-    "iata": "LMU"
+    "iata": "LMU",
+    "name": "Lemba Jaya Airport"
   },
   {
     "city": "Jember",
-    "iata": "JBB"
+    "iata": "JBB",
+    "name": "Notohadinegoro Airport"
   },
   {
     "city": "Kaimana",
-    "iata": "KNG"
+    "iata": "KNG",
+    "name": "Kaimana Airport"
   },
   {
     "city": "Kao",
-    "iata": "KAZ"
+    "iata": "KAZ",
+    "name": "Kao Airport"
   },
   {
     "city": "Karimunjawa",
-    "iata": "KWB"
+    "iata": "KWB",
+    "name": "Dewandaru Airport"
   },
   {
     "city": "Kendari",
-    "iata": "KDI"
+    "iata": "KDI",
+    "name": "Haluoleo Airport"
   },
   {
     "city": "Kerinci",
-    "iata": "KRC"
+    "iata": "KRC",
+    "name": "Depati Parbo Airport"
   },
   {
     "city": "Ketapang",
-    "iata": "KTG"
+    "iata": "KTG",
+    "name": "Rahadi Osman Airport"
   },
   {
     "city": "Kisar",
-    "iata": "KSX"
+    "iata": "KSX",
+    "name": "Kisar Airport"
   },
   {
     "city": "Kolaka",
-    "iata": "KXB"
+    "iata": "KXB",
+    "name": "Wolter Monginsidi Airport"
   },
   {
     "city": "Kotabaru",
-    "iata": "KBU"
+    "iata": "KBU",
+    "name": "Stagen Airport"
   },
   {
     "city": "Krui",
-    "iata": "TFY"
+    "iata": "TFY",
+    "name": "Krui Airport"
   },
   {
     "city": "Kuala Pembuang",
-    "iata": "KLP"
+    "iata": "KLP",
+    "name": "Tjilik Riwut Airport"
   },
   {
     "city": "Kupang",
-    "iata": "KOE"
+    "iata": "KOE",
+    "name": "El Tari Airport"
   },
   {
     "city": "Kutacane",
-    "iata": "LSR"
+    "iata": "LSR",
+    "name": "Kutacane Airport"
   },
   {
     "city": "Labuan Bajo",
-    "iata": "LBJ"
+    "iata": "LBJ",
+    "name": "Komodo Airport"
   },
   {
     "city": "Labuha",
-    "iata": "LAH"
+    "iata": "LAH",
+    "name": "Bubung Airport"
   },
   {
     "city": "Larantuka",
-    "iata": "LKA"
+    "iata": "LKA",
+    "name": "Gewayentana Airport"
   },
   {
     "city": "Lewoleba",
-    "iata": "LWE"
+    "iata": "LWE",
+    "name": "Wonopito Airport"
   },
   {
     "city": "Lhokseumawe",
-    "iata": "LSW"
+    "iata": "LSW",
+    "name": "Malikus Saleh Airport"
   },
   {
     "city": "Long Apung",
-    "iata": "LPU"
+    "iata": "LPU",
+    "name": "Long Apung Airport"
   },
   {
     "city": "Long Bawan",
-    "iata": "LBW"
+    "iata": "LBW",
+    "name": "Long Bawan Airport"
   },
   {
     "city": "Lubuklinggau",
-    "iata": "LLJ"
+    "iata": "LLJ",
+    "name": "Silampari Airport"
   },
   {
     "city": "Luwuk",
-    "iata": "LUW"
+    "iata": "LUW",
+    "name": "Syukuran Aminuddin Amir Airport"
   },
   {
     "city": "Mahakam Ulu",
-    "iata": "DTD"
+    "iata": "DTD",
+    "name": "Long Bawan Airport"
   },
   {
     "city": "Makassar",
-    "iata": "UPG"
+    "iata": "UPG",
+    "name": "Sultan Hasanuddin International Airport"
   },
   {
     "city": "Malang",
-    "iata": "MLG"
+    "iata": "MLG",
+    "name": "Abdul Rachman Saleh Airport"
   },
   {
     "city": "Malinau",
-    "iata": "LNU"
+    "iata": "LNU",
+    "name": "Malinau Airport"
   },
   {
     "city": "Mamuju",
-    "iata": "MJU"
+    "iata": "MJU",
+    "name": "Mamuju Airport"
   },
   {
     "city": "Manado",
-    "iata": "MDC"
+    "iata": "MDC",
+    "name": "Sam Ratulangi Airport"
   },
   {
     "city": "Manokwari",
-    "iata": "MKW"
+    "iata": "MKW",
+    "name": "Rendani Airport"
   },
   {
     "city": "Masamba",
-    "iata": "MXB"
+    "iata": "MXB",
+    "name": "Andi Jemma Airport"
   },
   {
     "city": "Matak",
-    "iata": "MWK"
+    "iata": "MWK",
+    "name": "Matak Airport"
   },
   {
     "city": "Mataram",
-    "iata": "LOP"
+    "iata": "LOP",
+    "name": "Lombok International Airport"
   },
   {
     "city": "Maumere",
-    "iata": "MOF"
-  },
-  {
-    "city": "Medan",
-    "iata": "KNO"
+    "iata": "MOF",
+    "name": "Frans Seda Airport"
   },
   {
     "city": "Melak",
-    "iata": "GHS"
+    "iata": "GHS",
+    "name": "Long Bawan Airport"
   },
   {
     "city": "Melonguane",
-    "iata": "MNA"
+    "iata": "MNA",
+    "name": "Melonguane Airport"
   },
   {
     "city": "Merauke",
-    "iata": "MKQ"
+    "iata": "MKQ",
+    "name": "Mopah Airport"
   },
   {
     "city": "Meulaboh",
-    "iata": "MEQ"
+    "iata": "MEQ",
+    "name": "Seunagan Airport"
   },
   {
     "city": "Miangas",
-    "iata": "—"
+    "iata": "—",
+    "name": ""
   },
   {
     "city": "Moa",
-    "iata": "JIO"
+    "iata": "JIO",
+    "name": "Moa Airport"
   },
   {
     "city": "Morotai",
-    "iata": "OTI"
+    "iata": "OTI",
+    "name": "Pitu Airport"
   },
   {
     "city": "Morowali",
-    "iata": "MOH"
+    "iata": "MOH",
+    "name": "Morowali Airport"
   },
   {
     "city": "Muara Bungo",
-    "iata": "BUU"
+    "iata": "BUU",
+    "name": "Muara Bungo Airport"
   },
   {
     "city": "Muara Teweh",
-    "iata": "HMS"
+    "iata": "HMS",
+    "name": "Muara Teweh Airport"
   },
   {
     "city": "Mukomuko",
-    "iata": "MPC"
+    "iata": "MPC",
+    "name": "Raden Mattaher Airport"
   },
   {
     "city": "Nabire",
-    "iata": "NBX"
+    "iata": "NBX",
+    "name": "Nabire Airport"
   },
   {
     "city": "Namlea",
-    "iata": "NAM"
+    "iata": "NAM",
+    "name": "Namlea Airport"
   },
   {
     "city": "Namrole",
-    "iata": "NRE"
+    "iata": "NRE",
+    "name": "Namrole Airport"
   },
   {
     "city": "Nanga Pinoh",
-    "iata": "NPO"
+    "iata": "NPO",
+    "name": "Susilo Airport"
   },
   {
     "city": "Noemfoor",
-    "iata": "FOO"
+    "iata": "FOO",
+    "name": "Noemfoor Airport"
   },
   {
     "city": "Nunukan",
-    "iata": "NNX"
+    "iata": "NNX",
+    "name": "Nunukan Airport"
   },
   {
     "city": "Oksibil",
-    "iata": "OKL"
+    "iata": "OKL",
+    "name": "Oksibil Airport"
   },
   {
     "city": "Padang",
-    "iata": "PDG"
+    "iata": "PDG",
+    "name": "Minangkabau International Airport"
   },
   {
     "city": "Padang Sidempuan",
-    "iata": "AEG"
+    "iata": "AEG",
+    "name": "Aek Godang Airport"
   },
   {
     "city": "Pagar Alam",
-    "iata": "PXA"
+    "iata": "PXA",
+    "name": "Pagar Alam Airport"
   },
   {
     "city": "Palangkaraya",
-    "iata": "PKY"
+    "iata": "PKY",
+    "name": "Tjilik Riwut Airport"
   },
   {
     "city": "Palembang",
-    "iata": "PLM"
+    "iata": "PLM",
+    "name": "Sultan Mahmud Badaruddin II Airport"
   },
   {
     "city": "Palopo",
-    "iata": "LLO"
+    "iata": "LLO",
+    "name": "Lalos Airport"
   },
   {
     "city": "Palu",
-    "iata": "PLW"
+    "iata": "PLW",
+    "name": "Mutiara Airport"
   },
   {
     "city": "Pangandaran",
-    "iata": "–"
+    "iata": "—",
+    "name": ""
   },
   {
     "city": "Pangkal Pinang",
-    "iata": "PGK"
+    "iata": "PGK",
+    "name": "Depati Amir Airport"
   },
   {
     "city": "Pangkalanbun",
-    "iata": "PKN"
+    "iata": "PKN",
+    "name": "Iskandar Airport"
   },
   {
     "city": "Pasir Pengaraian",
-    "iata": "PPR"
+    "iata": "PPR",
+    "name": "Pasir Pengaraian Airport"
   },
   {
     "city": "Pekanbaru",
-    "iata": "PKU"
+    "iata": "PKU",
+    "name": "Sultan Syarif Kasim II International Airport"
   },
   {
     "city": "Pontianak",
-    "iata": "PNK"
+    "iata": "PNK",
+    "name": "Supadio Airport"
   },
   {
     "city": "Poso",
-    "iata": "PSJ"
+    "iata": "PSJ",
+    "name": "Kasiguncu Airport"
+  },
+  {
+    "city": "Pulau Baai",
+    "iata": "PDO",
+    "name": "Pulau Baai Airport"
+  },
+  {
+    "city": "Pulau Panjang",
+    "iata": "—",
+    "name": ""
   },
   {
     "city": "Purbalingga",
-    "iata": "PWL"
+    "iata": "—",
+    "name": ""
+  },
+  {
+    "city": "Purbalingga",
+    "iata": "—",
+    "name": ""
   },
   {
     "city": "Putussibau",
-    "iata": "PSU"
+    "iata": "PSU",
+    "name": "Putussibau Airport"
   },
   {
     "city": "Raha",
-    "iata": "RAQ"
+    "iata": "RAQ",
+    "name": "Sugimanuru Airport"
   },
   {
     "city": "Ranai",
-    "iata": "NTX"
+    "iata": "NTX",
+    "name": "Ranai Airport"
+  },
+  {
+    "city": "Rantau Prapat",
+    "iata": "RPP",
+    "name": "Rantau Prapat Airport"
   },
   {
     "city": "Rengat",
-    "iata": "RGT"
+    "iata": "RGT",
+    "name": "Japura Airport"
   },
   {
-    "city": "Rote",
-    "iata": "RTI"
+    "city": "Rote Island",
+    "iata": "RTI",
+    "name": "Rote Island Airport"
   },
   {
-    "city": "Ruteng",
-    "iata": "RTG"
+    "city": "Roti",
+    "iata": "RTI",
+    "name": "Rote Island Airport"
   },
   {
     "city": "Sabang",
-    "iata": "SBG"
+    "iata": "SBG",
+    "name": "Maimun Saleh Airport"
   },
   {
-    "city": "Sabu",
-    "iata": "SAU"
+    "city": "Salat Island",
+    "iata": "SXT",
+    "name": "Salat Island Airport"
   },
   {
     "city": "Samarinda",
-    "iata": "AAP"
+    "iata": "SRI",
+    "name": "Temindung Airport"
   },
   {
     "city": "Sampit",
-    "iata": "SMQ"
+    "iata": "SMQ",
+    "name": "H Asan Airport"
   },
   {
     "city": "Sanana",
-    "iata": "SQN"
+    "iata": "SQN",
+    "name": "Naha Airport"
   },
   {
-    "city": "Sangihe",
-    "iata": "NAH"
+    "city": "Sanggata",
+    "iata": "SGQ",
+    "name": "Sanggata Airport"
   },
   {
-    "city": "Saumlaki",
-    "iata": "SXK"
+    "city": "Sarmi",
+    "iata": "ZRM",
+    "name": "Sarmi Airport"
   },
   {
-    "city": "Seko",
-    "iata": "SKO"
+    "city": "Sawu",
+    "iata": "SAU",
+    "name": "Sawu Airport"
   },
   {
     "city": "Selayar",
-    "iata": "KSR"
+    "iata": "KSR",
+    "name": "Selayar Airport"
   },
   {
     "city": "Semarang",
-    "iata": "SRG"
+    "iata": "SRG",
+    "name": "Achmad Yani International Airport"
+  },
+  {
+    "city": "Senggeh",
+    "iata": "SEH",
+    "name": "Senggeh Airport"
+  },
+  {
+    "city": "Senggo",
+    "iata": "ZEG",
+    "name": "Senggo Airport"
   },
   {
     "city": "Serui",
-    "iata": "WABO"
+    "iata": "ZRI",
+    "name": "Pulau Derawan Airport"
   },
   {
     "city": "Sibolga",
-    "iata": "FLZ"
+    "iata": "FLZ",
+    "name": "Sibolga Airport"
   },
   {
-    "city": "Siborong-Borong",
-    "iata": "DTB"
-  },
-  {
-    "city": "Simalungun",
-    "iata": "SIW"
-  },
-  {
-    "city": "Simpang Ampek",
-    "iata": "—"
-  },
-  {
-    "city": "Sinabang",
-    "iata": "LKI"
-  },
-  {
-    "city": "Singkawang",
-    "iata": "SKJ"
-  },
-  {
-    "city": "Singkil",
-    "iata": "—"
+    "city": "Sinak",
+    "iata": "NKD",
+    "name": "Sinak Airport"
   },
   {
     "city": "Sintang",
-    "iata": "SQG"
+    "iata": "SQG",
+    "name": "Sintang Airport"
   },
   {
-    "city": "Sipora",
-    "iata": "RKI"
-  },
-  {
-    "city": "Soroako",
-    "iata": "SQR"
+    "city": "Soa",
+    "iata": "SOQ",
+    "name": "Soa Airport"
   },
   {
     "city": "Sorong",
-    "iata": "SOQ"
-  },
-  {
-    "city": "South Tangerang",
-    "iata": "PCB"
+    "iata": "SOQ",
+    "name": "Domine Eduard Osok Airport"
   },
   {
     "city": "Sumbawa Besar",
-    "iata": "SWQ"
+    "iata": "SWQ",
+    "name": "Sumbawa Besar Airport"
   },
   {
     "city": "Sumenep",
-    "iata": "SUP"
-  },
-  {
-    "city": "Sungai Pakning",
-    "iata": "SEQ"
+    "iata": "SUP",
+    "name": "Trunojoyo Airport"
   },
   {
     "city": "Surabaya",
-    "iata": "SUB"
+    "iata": "SUB",
+    "name": "Juanda International Airport"
   },
   {
-    "city": "Surakarta",
-    "iata": "SOC"
-  },
-  {
-    "city": "Takengon",
-    "iata": "TXE"
+    "city": "Tahuna",
+    "iata": "NAH",
+    "name": "Naha Airport"
   },
   {
     "city": "Tambolaka",
-    "iata": "TMC"
+    "iata": "TMC",
+    "name": "Tambolaka Airport"
   },
   {
-    "city": "Tana Toraja",
-    "iata": "TRT"
-  },
-  {
-    "city": "Tanahmerah",
-    "iata": "TMH"
-  },
-  {
-    "city": "Tangerang",
-    "iata": "—"
-  },
-  {
-    "city": "Tanjung Balai Karimun",
-    "iata": "TJB"
+    "city": "Tanjung Balai",
+    "iata": "TJB",
+    "name": "Tanjung Balai Airport"
   },
   {
     "city": "Tanjung Pandan",
-    "iata": "TJQ"
+    "iata": "TJQ",
+    "name": "Buluh Tumbang Airport"
   },
   {
     "city": "Tanjung Pinang",
-    "iata": "TNJ"
+    "iata": "TNJ",
+    "name": "Raja Haji Fisabilillah International Airport"
   },
   {
-    "city": "Tanjung Selor",
-    "iata": "TJS"
+    "city": "Tanoe",
+    "iata": "TAX",
+    "name": "Taliabu Island Airport"
   },
   {
     "city": "Tarakan",
-    "iata": "TRK"
-  },
-  {
-    "city": "Tasikmalaya",
-    "iata": "TSY"
-  },
-  {
-    "city": "Tembilahan",
-    "iata": "—"
+    "iata": "TRK",
+    "name": "Juwata International Airport"
   },
   {
     "city": "Ternate",
-    "iata": "TTE"
+    "iata": "TTE",
+    "name": "Sultan Babullah Airport"
   },
   {
-    "city": "Timika",
-    "iata": "TIM"
+    "city": "Tidore",
+    "iata": "TTE",
+    "name": "Sultan Babullah Airport"
   },
   {
-    "city": "Tual",
-    "iata": "LUV"
+    "city": "Tinak",
+    "iata": "TIC",
+    "name": "Tinak Airport"
   },
   {
-    "city": "Waingapu",
-    "iata": "WGP"
+    "city": "Tobelo",
+    "iata": "KAZ",
+    "name": "Kao Airport"
   },
   {
-    "city": "Waisai",
-    "iata": "RJM"
+    "city": "Tolitoli",
+    "iata": "TLI",
+    "name": "Sultan Syarif Alkadrie Airport"
   },
   {
     "city": "Wamena",
-    "iata": "WMX"
-  },
-  {
-    "city": "Wangi-Wangi",
-    "iata": "WNI"
+    "iata": "WMX",
+    "name": "Wamena Airport"
   },
   {
     "city": "Wasior",
-    "iata": "WSR"
-  },
-  {
-    "city": "Werur",
-    "iata": "WRR"
+    "iata": "WSR",
+    "name": "Wasior Airport"
   },
   {
     "city": "Yogyakarta",
-    "iata": "JOG"
-  },
-  {
-    "city": "Yogyakarta",
-    "iata": "YIA"
+    "iata": "JOG",
+    "name": "Adisucipto International Airport"
   }
 ]
+
+
