@@ -19,7 +19,7 @@
          <buttons>
             <MFXButton fx:id="btnAddAirline" onAction="#handleClicks" prefHeight="37.0" style="-fx-background-color: #198151;" text="Tambah" textFill="WHITE" />
             <MFXButton onAction="#createEditAirlineWindow" prefHeight="37.0" style="-fx-background-color: #1B76FC;" text="Edit" textFill="WHITE" />
-            <MFXButton prefHeight="37.0" style="-fx-background-color: #D03342;" text="Hapus" textFill="WHITE" />
+            <MFXButton onAction="#deleteSelected" prefHeight="37.0" style="-fx-background-color: #D03342;" text="Hapus" textFill="WHITE" />
          </buttons>
       </ButtonBar>
    </children>
