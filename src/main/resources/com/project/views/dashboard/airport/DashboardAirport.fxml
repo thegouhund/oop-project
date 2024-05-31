@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTableView?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pnlAirline" prefHeight="576.0" prefWidth="859.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.dashboard.airport.DashboardAirportController">
+      <MFXTableView fx:id="tblAirport" layoutX="38.0" layoutY="89.0" prefHeight="398.0" prefWidth="755.0" />
+      <Label layoutX="38.0" layoutY="43.0" text="Data Bandara">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="498.0" layoutY="504.0" prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+            <MFXButton fx:id="btnAddAirport" onAction="#handleClicks" prefHeight="37.0" style="-fx-background-color: #198151;" text="Tambah" textFill="WHITE" />
+            <MFXButton onAction="#createEditAirportWindow" prefHeight="37.0" style="-fx-background-color: #1B76FC;" text="Edit" textFill="WHITE" />
+            <MFXButton onAction="#deleteSelected" prefHeight="37.0" style="-fx-background-color: #D03342;" text="Hapus" textFill="WHITE" />
+         </buttons>
+      </ButtonBar>
+</Pane>
