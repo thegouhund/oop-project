@@ -5,11 +5,9 @@ import com.project.dao.AirportDAO;
 import com.project.dao.PassengerDAO;
 import com.project.dao.ScheduleDAO;
 import com.project.dao.TicketDAO;
-import com.project.model.Airport;
-import com.project.model.Passenger;
-import com.project.model.Schedule;
+import com.project.model.*;
 import com.project.components.ScheduleUI;
-import com.project.model.Ticket;
+import com.project.router.AppRouter;
 import com.project.utils.DatabaseUtils;
 import io.github.palexdev.materialfx.controls.*;
 import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
@@ -17,12 +15,17 @@ import io.github.palexdev.mfxresources.fonts.MFXIconWrapper;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -60,10 +63,16 @@ public class FormController extends Controller {
     @FXML
     private MFXIconWrapper iconCbSeatChoice;
 
+    private User user;
+
     Connection connection = DatabaseUtils.getConnection();
 
+    public FormController(User user) {
+        this.user = user;
+    }
+
     @FXML
-    private void initialize() {
+    public void initialize() {
         iconAirportArrival.setIcon(new MFXFontIcon("fas-plane-departure", 20)); // todo
         iconAirportDestination.setIcon(new MFXFontIcon("fas-plane-arrival", 20));
         iconDatePickerDeparture.setIcon(new MFXFontIcon("fas-calendar", 20));
@@ -114,7 +123,7 @@ public class FormController extends Controller {
         HBox hbox = new HBox();
         MFXTextField nameField = new MFXTextField();
         MFXTextField ageField = new MFXTextField();
-        MFXButton deleteButton = new MFXButton("×");
+        MFXButton deleteButton = new MFXButton("×" );
         nameField.setFloatingText("Nama penumpang " + passengerAmount);
         nameField.setMinWidth(200);
         ageField.setFloatingText("Usia penumpang " + passengerAmount);
@@ -144,12 +153,16 @@ public class FormController extends Controller {
             vBoxSchedule.getChildren().add(labelTiketPenerbangan);
             for (int i = 0; i < 10; i++) {
                 Schedule schedule = ScheduleMockApi.generate(cbFrom.getValue(), cbDestination.getValue(), datePickerDeparture.getValue().toString(), getInputtedPassengers().size());
-                ScheduleUI scheduleUI = new ScheduleUI(schedule);
-                scheduleUI.setBuyButtonAction(e -> onTicketBuy(schedule, schedule.getPrice()));
+                ScheduleUI scheduleUI = new ScheduleUI(schedule, true);
+                scheduleUI.setButtonAction(e -> onTicketBuy(schedule, schedule.getPrice()));
 
                 vBoxSchedule.getChildren().add(scheduleUI);
             }
         }
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     private void onTicketBuy(Schedule schedule, double price) {
@@ -165,26 +178,26 @@ public class FormController extends Controller {
         }
         int scheduleId = scheduleDAO.addAndGetGeneratedId(schedule, price);
         schedule.setId(scheduleId);
-        ticketDAO.add(ticket, schedule);
+        ticketDAO.add(this.user, ticket, schedule);
     }
 
     @FXML
     private boolean isFormValid() {
         int checks = 0;
         if (cbFrom.getValue() == null) {
-            cbFrom.setStyle("-fx-border-color: red;-mfx-color: red;");
+            cbFrom.setStyle("-fx-border-color: red;-mfx-color: red;" );
             labelErrorMsgCbAirportFrom.setVisible(true);
         } else {
             checks++;
         }
         if (cbDestination.getValue() == null) {
-            cbDestination.setStyle("-fx-border-color: red;-mfx-color: red;");
+            cbDestination.setStyle("-fx-border-color: red;-mfx-color: red;" );
             labelErrorMsgCbAirportDestination.setVisible(true);
         } else {
             checks++;
         }
         if (datePickerDeparture.getValue() == null) {
-            datePickerDeparture.setStyle("-fx-border-color: red;-mfx-color: red;");
+            datePickerDeparture.setStyle("-fx-border-color: red;-mfx-color: red;" );
             labelErrorMsgDatePicker.setVisible(true);
         } else {
             checks++;
@@ -196,13 +209,13 @@ public class FormController extends Controller {
             MFXTextField nameField = (MFXTextField) hbox.getChildren().get(0);
             MFXTextField ageField = (MFXTextField) hbox.getChildren().get(1);
             if (nameField.getText().isEmpty()) {
-                nameField.setStyle("-fx-border-color: red;-mfx-color: red;");
+                nameField.setStyle("-fx-border-color: red;-mfx-color: red;" );
             } else {
                 checks++;
             }
 
-            if (ageField.getText().isEmpty() || !ageField.getText().matches("\\d+")) { // is empty or is not a number
-                ageField.setStyle("-fx-border-color: red;-mfx-color: red;");
+            if (ageField.getText().isEmpty() || !ageField.getText().matches("\\d+" )) { // is empty or is not a number
+                ageField.setStyle("-fx-border-color: red;-mfx-color: red;" );
             } else {
                 checks++;
             }
@@ -232,6 +245,18 @@ public class FormController extends Controller {
             return true;
         }
         return false;
+    }
+
+    @FXML
+    private void goBack(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/project/views/" + "UserTicket.fxml" ));
+        loader.setControllerFactory(c -> new UserTicketController(user));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

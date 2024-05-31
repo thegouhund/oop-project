@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox minHeight="-Infinity" prefHeight="621.0" prefWidth="1270.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.FormController">
+<HBox minHeight="-Infinity" prefHeight="621.0" prefWidth="1270.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.controller.FormController">
     <children>
         <MFXScrollPane hbarPolicy="NEVER" style="-fx-background-color: #f6f6f6;">
             <content>
@@ -65,13 +65,14 @@
                     </Label>
                     <MFXComboBox fx:id="choiceSeat" floatingText="Pilih kelas" prefHeight="46.0" prefWidth="166.0" value="Any" />
                     <VBox fx:id="vboxPassengerField" prefHeight="27.0" prefWidth="467.0" spacing="16.0" />
-                    <MFXButton minHeight="38.0" minWidth="174.0" onAction="#onClickAddPassenger" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: white;" text="Tambah Penumpang" />
-                    <MFXButton depthLevel="LEVEL5" onAction="#onTicketSearch" prefHeight="34.0" prefWidth="467.0" rippleColor="#5659ff" style="-fx-background-color: #178CF4; -fx-text-fill: white;" text="Cari Tiket" textFill="WHITE">
+                    <MFXButton minHeight="38.0" minWidth="174.0" onAction="#onClickAddPassenger" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: #198151; -fx-text-fill: white;" text="Tambah Penumpang" />
+                    <MFXButton depthLevel="LEVEL5" onAction="#onTicketSearch" prefHeight="34.0" prefWidth="467.0" rippleColor="#5659ff" style="-fx-background-color: #720fc7; -fx-text-fill: white;" styleClass="tex" text="Cari Tiket">
                         <font>
                             <Font name="System Bold" size="16.0" />
                         </font>
                     </MFXButton>
                     <Label fx:id="labelErrorMsg" prefHeight="18.0" prefWidth="288.0" textFill="RED" />
+               <MFXButton onAction="#goBack" prefHeight="37.0" prefWidth="76.0" style="-fx-background-color: #D03342; -fx-text-fill: white;" text="Kembali" />
                 </VBox>
             </content>
         </MFXScrollPane>
