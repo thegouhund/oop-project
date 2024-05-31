@@ -22,7 +22,7 @@ public class AirlineDAO extends DAO<Airline> {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                airline = new Airline(result.getString("name"));
+                airline = new Airline(result.getString("name"), result.getString("code"));
                 airline.setId(result.getInt("id"));
 
                 return airline;
@@ -41,7 +41,7 @@ public class AirlineDAO extends DAO<Airline> {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM airline");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
-                airline = new Airline(result.getString("name"));
+                airline = new Airline(result.getString("name"), result.getString("code"));
                 airline.setId(result.getInt("id"));
                 airlineList.add(airline);
             }
@@ -54,9 +54,10 @@ public class AirlineDAO extends DAO<Airline> {
     @Override
     public void update(Airline airline, int id) {
         try {
-            PreparedStatement statement = connection.prepareStatement("UPDATE airline SET name = ? WHERE id = ?");
+            PreparedStatement statement = connection.prepareStatement("UPDATE airline SET name = ?, code = ? WHERE id = ?");
             statement.setString(1, airline.getName());
-            statement.setInt(2, id);
+            statement.setString(2, airline.getAirlineCode());
+            statement.setInt(3, id);
             System.out.println(statement);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -79,10 +80,26 @@ public class AirlineDAO extends DAO<Airline> {
     @Override
     public void add(Airline airline) {
         try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO airline (name) VALUES (?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO airline (name, code) VALUES (?, ?)");
             statement.setString(1, airline.getName());
+            statement.setString(2, airline.getAirlineCode());
             statement.executeUpdate();
             System.out.println(statement);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public int size() {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) FROM airline");
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                return 0;
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

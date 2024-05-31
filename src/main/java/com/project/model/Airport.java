@@ -1,11 +1,12 @@
 package com.project.model;
 
-public class Airport implements DatabaseEntity{
+public class Airport extends FlightEntity implements DatabaseEntity {
     private int id;
     private String iata;
     private String city;
 
-    public Airport(String iata, String city) {
+    public Airport(String iata, String city, String name) {
+        super(name);
         this.iata = iata;
         this.city = city;
     }

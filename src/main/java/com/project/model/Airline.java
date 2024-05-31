@@ -1,12 +1,12 @@
 package com.project.model;
 
-public class Airline extends Entity implements DatabaseEntity {
-    private String airlineCode;
+public class Airline extends FlightEntity implements DatabaseEntity {
     private int id;
+    private String airlineCode;
 
-    public Airline(String name) {
+    public Airline(String name, String airlineCode) {
         super(name);
-        this.airlineCode = "";
+        this.airlineCode = airlineCode;
     }
 
     public String getAirlineCode() {
